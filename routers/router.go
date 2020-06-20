@@ -2,8 +2,12 @@ package routers
 
 import (
 	"net/http"
+	//"encoding/json"
+	//"log"
 
 	"github.com/gin-gonic/gin"
+	"github.com/chartsmirror/controller"
+
 )
 
 // InitilaizeRoutes - routes for app
@@ -14,7 +18,14 @@ func InitilaizeRoutes(router *gin.Engine) {
 
 func showIndexPage(c *gin.Context) {
 
-	data := gin.H{"title": "Home Page"}
+	charts := controller.GetCharts()
+
+	// jsonString, err := json.Marshal(charts)
+	
+	// if err != nil {
+	// 	log.Fatalf("Unable to retrive json data from %v", charts)
+	// }
+	data := gin.H{"title": "Home Page", "chartData": charts}
 
 	render(c, data, "index.tmpl")
 }

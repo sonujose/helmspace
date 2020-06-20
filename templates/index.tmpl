@@ -4,5 +4,13 @@
 
 <h1>Hello ChartsMirror!</h1>
 
-<!--Embed the footer.html template at this location-->
+{{range .chartData }}
+    <a href="/article/view">
+      <h2>{{.Name}}</h2>
+    </a>
+    <p>{{.Description}}</p>
+    <div>{{.Version}}</div>
+{{end}}
+
+<!-- Footer section -->
 {{ template "footer.tmpl" .}}
