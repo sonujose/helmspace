@@ -6,20 +6,19 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-//RegisterAPIEndpoints : Register routes for all api endpoints
-func RegisterAPIEndpoints(routerEngine *gin.Engine) {
+// InitilaizeRoutes - routes for app
+func InitilaizeRoutes(router *gin.Engine) {
 	
-	// Setup route group for the API
-	api := routerEngine.Group("/api/v1")
-	{
-		api.GET("/charts", ListCharts)
-	}
-
+	router.GET("/", showIndexPage)
 }
 
-// ListCharts - List all pods in a namespace
-func ListCharts(c *gin.Context) {
-	c.JSON(http.StatusOK, map[string]string{
-		"pod": "pod1-dssdasd",
-	})
+func showIndexPage(c *gin.Context) {
+
+	data := gin.H{"title": "Home Page"}
+
+	render(c, data, "index.tmpl")
+}
+
+func render(c *gin.Context, data gin.H, templateName string) {
+	c.HTML(http.StatusOK, templateName, data)
 }
