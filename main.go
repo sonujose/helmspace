@@ -14,9 +14,10 @@ var router *gin.Engine
 func main() {
 	router := gin.New()
 
-	// Logger middleware will write the logs to gin.DefaultWriter even if you set with GIN_MODE=release.
-	// Recovery middleware recovers from any panics and writes a 500 if there was one.
+	// Logger middleware will write the logs to gin.DefaultWriter 
 	router.Use(gin.Logger())
+
+	// Recovery middleware recovers from any panics and writes a 500 
 	router.Use(gin.Recovery())
 
 	mirror_router.RegisterAPIEndpoints(router)
