@@ -24,7 +24,7 @@ func main() {
 
 	router.LoadHTMLGlob("templates/*")
 
-	mirror_router.RegisterApplicationRoutes(router)
+	mirror_router.InitilaizeRoutes(router)
 
 	router.Run(httpPort())
 }

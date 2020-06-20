@@ -17,7 +17,7 @@ func RegisterAPIEndpoints(routerEngine *gin.Engine) {
 
 }
 
-// ListPods - List all pods in a namespace
+// ListCharts - List all pods in a namespace
 func ListCharts(c *gin.Context) {
 	c.JSON(http.StatusOK, map[string]string{
 		"pod": "pod1-dssdasd",

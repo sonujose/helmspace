@@ -6,18 +6,19 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-// RegisterApplicationRoutes - routes for app
-func RegisterApplicationRoutes(routerEngine *gin.Engine) {
+// InitilaizeRoutes - routes for app
+func InitilaizeRoutes(router *gin.Engine) {
+	
+	router.GET("/", showIndexPage)
+}
 
-	routerEngine.GET("/", func(c *gin.Context) {
+func showIndexPage(c *gin.Context) {
 
-		// Call the HTML method of the Context to render a template
-		c.HTML(
-			http.StatusOK, "index.tmpl",
-			gin.H{
-				"title": "Home Page",
-			},
-		)
-	  
-	  })
+	data := gin.H{"title": "Home Page"}
+
+	render(c, data, "index.tmpl")
+}
+
+func render(c *gin.Context, data gin.H, templateName string) {
+	c.HTML(http.StatusOK, templateName, data)
 }
