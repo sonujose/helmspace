@@ -17,7 +17,7 @@ body {
     margin-bottom: 80px;
     min-height: 480px;
   }
-  body .wrapper label {
+  body .dash-tile {
     width: 200px;
     height: 200px;
     background: #181848 !important;
@@ -48,3 +48,5 @@ body {
   border-radius: 0
 }
 .chart-mirror { color: white !important }
+
+.chart-mirror-search {padding: 10px}

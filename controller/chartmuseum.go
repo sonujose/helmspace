@@ -6,7 +6,7 @@ import (
 	"io/ioutil"
 	"os"
 
-	"github.com/chartsmirror/models"
+	"github.com/helm-dimensions/models"
 )
 
 // API Endpoint for chartmuseum server

@@ -5,8 +5,7 @@
 <!-- Dashboard Card Tiles -->
 <div class='wrapper container'>
   {{range $k, $v:= .chartData}}
-  <label>
-    <div>
+    <div class="dash-tile">
       <div class="icon-container">
         {{ if (index $v 0).Icon}}  
         <img class="card-img-top" src={{ (index $v 0).Icon }}>
@@ -19,9 +18,37 @@
         <div class="version">version : {{ (index $v 0).Version }}</div>
       </div>
     </div>
-  </label>
   {{end}}
-   
+     {{range $k, $v:= .chartData}}
+    <div class="dash-tile">
+      <div class="icon-container">
+        {{ if (index $v 0).Icon}}  
+        <img class="card-img-top" src={{ (index $v 0).Icon }}>
+        {{else}}
+        <img class="card-img-top" src="static/img/default_icon.png">
+        {{end}}
+      </div>
+      <div class="chart-info">
+        <div>{{ (index $v 0).Name }}</div>
+        <div class="version">version : {{ (index $v 0).Version }}</div>
+      </div>
+    </div>
+  {{end}}
+    {{range $k, $v:= .chartData}}
+    <div class="dash-tile">
+      <div class="icon-container">
+        {{ if (index $v 0).Icon}}  
+        <img class="card-img-top" src={{ (index $v 0).Icon }}>
+        {{else}}
+        <img class="card-img-top" src="static/img/default_icon.png">
+        {{end}}
+      </div>
+      <div class="chart-info">
+        <div>{{ (index $v 0).Name }}</div>
+        <div class="version">version : {{ (index $v 0).Version }}</div>
+      </div>
+    </div>
+  {{end}}
 </div>
 
 <!-- Footer section -->
