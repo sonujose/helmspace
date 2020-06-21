@@ -5,11 +5,11 @@ import (
 	"log"
 	"io/ioutil"
 	"os"
-	"fmt"
 
 	"github.com/chartsmirror/models"
 )
 
+// API Endpoint for chartmuseum server
 var api = "/api/charts"
 
 // GetCharts - Fetch sm charts
@@ -17,7 +17,7 @@ func GetCharts() map[string][]models.Chart {
 
 	urlfull := getBaseURL()
 
-	fmt.Printf("Fetching the url %v", urlfull)
+	log.Printf("Fetching the url %v \n", urlfull)
 
 	response,err := http.Get(getBaseURL())
 
@@ -26,8 +26,6 @@ func GetCharts() map[string][]models.Chart {
 	}
 
 	data, _ := ioutil.ReadAll(response.Body)
-
-	//fmt.Println(string(data))
 
 	charts, err := models.GetNewCharts(data)
 
@@ -40,11 +38,12 @@ func GetCharts() map[string][]models.Chart {
 
 func getBaseURL() string {
 
-	baseURL := "http://pickles-charts.australiaeast.cloudapp.azure.com"
+	baseURL := "http://localhost:9000"
 
-	apiendpoint := os.Getenv("CHART_MUSEUM_API_GET_CHARTS")
+	apiendpoint := os.Getenv("CHART_MUSEUM_URL")
 
 	if apiendpoint != "" {
+		log.Printf("Chartmuseum server provided - %s", apiendpoint)
 		baseURL = apiendpoint
 	}
 
