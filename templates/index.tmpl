@@ -2,10 +2,10 @@
 <!--Embed the header.html template at this location-->
 {{ template "header.tmpl" .}}
 
+<!-- Dashboard Card Tiles -->
 <div class='wrapper'>
   {{range $k, $v:= .chartData}}
-  <input id={{ $k }} type='checkbox'>
-  <label for={{ $k }}>
+  <label>
     <div>
       <div class="icon-container">
         {{ if (index $v 0).Icon}}  
@@ -17,41 +17,9 @@
       <div>{{ (index $v 0).Name }}</div>
     </div>
     <div>Version : {{ (index $v 0).Version }}</div>
-    <p>Congrats, you managed to click the box! Thanks for checking out this pen. Take a look at some of my other stuff too.</p>
-    <a href='https://codepen.io/jcoulterdesign/'>View my other stuff</a>
   </label>
   {{end}}
 </div>
-<div class="card-cont">
-{{range $k, $v:= .chartData}}
-<div class="card">
-  <div class="icon-container">
-        {{ if (index $v 0).Icon}}  
-        <img class="card-img-top" src={{ (index $v 0).Icon }}>
-        {{else}}
-        <img class="card-img-top" src="static/img/default_icon.png">
-        {{end}}
-    </div>
-  <div class="container">
-    <div class="card-title">
-            <h5>{{ (index $v 0).Name }}</h5>
-          </div>
-          <div class="card-footer" chart-name={{ (index $v 0).Name }}>
-            {{ (index $v 0).Version }}
-          </div> 
-    <input id='1' type='checkbox'>
-  <label for='1'>
-    <div>
-      
-      <span>{{ (index $v 0).Name }}</span>
-    </div>
-    <p>Congrats, you managed to click the box! Thanks for checking out this pen. Take a look at some of my other stuff too.</p>
-    <a href="">View my other stuff</a>
-  </label>
 
-  </div>
-</div>
-{{end}}
-</div>
 <!-- Footer section -->
 {{ template "footer.tmpl" .}}
