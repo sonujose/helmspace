@@ -7,7 +7,7 @@ import (
 
 	"github.com/gin-gonic/gin"
 
-	apiRoutes "github.com/chartsmirror/routers"
+	apiRoutes "github.com/helm-dimensions/routers"
 )
 
 var router *gin.Engine

@@ -1,6 +1,6 @@
-# chartsMirror
+# Helm-Dimensions
 
-ChartsMirror is a web UI dashboard to connect to your Helm chart server. It will allows you to manage the charts in your Chartserver with the interactive UI. The application is fully written in go language using the gin-gonic web framework.
+Helm-Dimensions is a web UI dashboard to visualize and manage charts in your Helm repo server. The application is fully written in go language using the gin-gonic web framework.
 
 <img src="./docs/dashboard.PNG">
 
@@ -19,5 +19,5 @@ setx CHART_MUSEUM_URL "http://my-chartmuseum-server"
 
 go build
 
-./chartsmirror
+./helm-dimensions
 ```

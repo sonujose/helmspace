@@ -1,4 +1,4 @@
-module github.com/chartsmirror
+module github.com/helm-dimensions
 
 go 1.13
 
