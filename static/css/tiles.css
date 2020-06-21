@@ -48,3 +48,5 @@ body {
   border-radius: 0
 }
 .chart-mirror { color: white !important }
+
+.chart-mirror-search {padding: 10px}

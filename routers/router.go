@@ -20,7 +20,7 @@ func showIndexPage(c *gin.Context) {
 
 	charts := controller.GetCharts()
 
-	data := gin.H{"title": "Charts Mirror", "chartData": charts}
+	data := gin.H{"title": "Helm-Dimensions", "chartData": charts}
 
 	render(c, data, "index.tmpl")
 }
