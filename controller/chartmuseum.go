@@ -38,7 +38,7 @@ func GetCharts() map[string][]models.Chart {
 
 func getBaseURL() string {
 
-	baseURL := "http://pickles-charts.australiaeast.cloudapp.azure.com"
+	baseURL := "http://localhost:9000"
 
 	apiendpoint := os.Getenv("CHART_MUSEUM_URL")
 
