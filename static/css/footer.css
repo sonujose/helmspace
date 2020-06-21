@@ -1,26 +1,10 @@
 footer p, footer strong, footer b, footer {
     color: #b0b0b0;
 }
-
 footer {
     width: 100%;
     z-index: 11111;
 }
-
-.footer-top {
-    background: #303030;
-    background-size: cover;
-    background-position: center;
-    padding: 0 0 20px;
-    font-family: "Oswald", sans-serif;;
-  padding-top:30px;
-  
-}
-
-.footer-top, .footer-bottom {
-    background-color: #1c1f2f;
-}
-
 .footer-bottom {
     padding: 15px 0;
     border-top: 1px solid #313646;
@@ -28,136 +12,20 @@ footer {
     color: #b0b0b0;
     font-family: "Oswald", sans-serif;;
 }
-
-
 .footer-site-info {
     font-size: 15px;
 }
-#footer-navigation, #footer-navigation li a:hover, .custom-footer, .custom-footer li a:hover {
-    color: white;
-}
-
-#footer-navigation, #footer-navigation li a, .custom-footer, .custom-footer li a {
-    color: #99a9b5;
-    padding-top: 15px;
-}
-
 .footer-bottom ul {
     margin: 0;
 }
-.inline-inside {
-    font-size: 0;
-    line-height: 0;
-}
-.clearfix:after, .clearfix:before {
-    content: "";
-    display: table;
-}
-#footer-menu li {
-    display: inline-block;
-    padding: 0 21px;
-    position: relative;
-    line-height: 1;
-}
-
-#footer-navigation, #footer-navigation li a, .custom-footer, .custom-footer li a {
-    color: #99a9b5;
-    padding-top: 15px;
-}
-
-#footer-navigation, #footer-navigation li a, .custom-footer, .custom-footer li a {
-    color: #99a9b5;
-    padding-top: 15px;
-}
-#footer-menu li+li:before {
-    content: '';
-    width: 0;
-    height: 100%;
-    position: absolute;
-    left: -1px;
-    top: 0;
-    font-size: 0;
-    border-left: 1px solid #232234;
-    border-right: 1px solid #333146;
-}
-
-
-navigation li a, .custom-footer, .custom-footer li a {
-    color: #99a9b5;
-    padding-top: 15px;
-}
-
-.footer-bottom a:hover {
-    color: white;
-}
-
-
 footer p, footer li {
     font-size: 15px;
     line-height: 22px;
 }
-
-
-.widget {
-    margin-bottom: 50px;
-}
-
-.footer-title {
-    margin-bottom: 40px;
-    color: #fff;
-    font-weight: 500;
-    text-transform: capitalize;
-    padding-bottom: 15px;
-    font-size: 16px;
-    position: relative;
-}
-
-.footer-title:after {
-    width: 50px;
-    background: #fff;
-    opacity: 0.2;
-    height: 1px;
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-}
-
-.gem-contacts-item {
-    padding-top: 10px;
-    font-size: 15px;
-}
-
-.gem-contacts-item i {
-    padding-right: 10px;
-}
-
-footer .widget ul {
-    list-style: none;
-    margin-top: 5px;
-}
-
-.posts li {
-    border-bottom: 1px solid #393d50;
-    padding-bottom: 12px;
-    padding-top: 6px;
-}
-
-footer p, footer li {
-    font-size: 15px;
-    line-height: 22px;
-}
-
-.gem-pp-posts-date {
-    color: #00bcd4;
-    font-size: 89.5%;
-}
-
 footer p {
     line-height: 24px;
     margin-bottom: 10px;font-size: 15px;
 }
-
 .footer-site-info
 {
   padding-top: 10px;
