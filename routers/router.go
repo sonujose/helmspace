@@ -20,12 +20,7 @@ func showIndexPage(c *gin.Context) {
 
 	charts := controller.GetCharts()
 
-	// jsonString, err := json.Marshal(charts)
-	
-	// if err != nil {
-	// 	log.Fatalf("Unable to retrive json data from %v", charts)
-	// }
-	data := gin.H{"title": "Home Page", "chartData": charts}
+	data := gin.H{"title": "Charts Mirror", "chartData": charts}
 
 	render(c, data, "index.tmpl")
 }

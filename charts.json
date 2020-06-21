@@ -1,0 +1,96 @@
+{
+    "chartmuseum": [
+        {
+            "name": "chartmuseum",
+            "home": "https://github.com/helm/chartmuseum",
+            "version": "2.13.0",
+            "description": "Host your own Helm Chart Repository",
+            "keywords": [
+                "chartmuseum",
+                "helm",
+                "charts repo"
+            ],
+            "maintainers": [
+                {
+                    "name": "codefresh-io",
+                    "email": "opensource@codefresh.io"
+                },
+                {
+                    "name": "cloudposse",
+                    "email": "hello@cloudposse.com"
+                },
+                {
+                    "name": "chartmuseum",
+                    "email": "chartmuseum@gmail.com"
+                }
+            ],
+            "icon": "https://raw.githubusercontent.com/helm/chartmuseum/master/logo2.png",
+            "apiVersion": "v1",
+            "appVersion": "0.12.0",
+            "urls": [
+                "charts/chartmuseum-2.13.0.tgz"
+            ],
+            "created": "2020-06-15T09:15:30Z",
+            "digest": "02fbeb61e1dcce93426c5c59a9e2e22cd838abf0265a4f93de9d736d9f99f148"
+        }
+    ],
+    "core-microservice": [
+        {
+            "name": "core-microservice",
+            "version": "0.10.0",
+            "description": "A Helm chart for Kubernetes",
+            "apiVersion": "v2",
+            "appVersion": "1.16.0",
+            "type": "application",
+            "urls": [
+                "charts/core-microservice-0.10.0.tgz"
+            ],
+            "created": "2020-06-13T20:48:55Z",
+            "digest": "9ff8fb28dc76c089e4d2dcf154f92f05de36399ef2a0f1301d24ade357b5ec10"
+        }
+    ],
+    "hexagonal-microservice": [
+        {
+            "name": "hexagonal-microservice",
+            "version": "0.1.0",
+            "description": "A Helm chart for Kubernetes",
+            "apiVersion": "v2",
+            "appVersion": "1.16.0",
+            "dependencies": [
+                {
+                    "name": "core-microservice",
+                    "version": "0.10.0",
+                    "repository": "dtapickles.azurecr.io/helm/core-microservice:v1"
+                }
+            ],
+            "type": "application",
+            "urls": [
+                "charts/hexagonal-microservice-0.1.0.tgz"
+            ],
+            "created": "2020-06-13T21:49:59Z",
+            "digest": "b533d4959b182265475a1483e75de4949d0efb189aa67d6d1ce7e83aee65c612"
+        }
+    ],
+    "ps-microservice": [
+        {
+            "name": "ps-microservice",
+            "version": "0.1.0",
+            "description": "A Helm chart for Kubernetes",
+            "apiVersion": "v2",
+            "appVersion": "2.0.0",
+            "dependencies": [
+                {
+                    "name": "core-microservice",
+                    "version": "0.10.0",
+                    "repository": "http://ps-chartmuseum.australiaeast.cloudapp.azure.com"
+                }
+            ],
+            "type": "application",
+            "urls": [
+                "charts/ps-microservice-0.1.0.tgz"
+            ],
+            "created": "2020-06-15T09:23:59Z",
+            "digest": "2e41dbb5b51b33d21faf2e1a8be052f55d83045223637e208a8db7021e2d6535"
+        }
+    ]
+}

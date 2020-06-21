@@ -27,7 +27,7 @@ func GetCharts() map[string][]models.Chart {
 
 	data, _ := ioutil.ReadAll(response.Body)
 
-	fmt.Println(string(data))
+	//fmt.Println(string(data))
 
 	charts, err := models.GetNewCharts(data)
 

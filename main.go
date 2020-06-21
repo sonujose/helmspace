@@ -3,10 +3,11 @@ package main
 import (
 	"fmt"
 	"os"
+	"net/http"
 
 	"github.com/gin-gonic/gin"
 
-	mirror_router "github.com/chartsmirror/routers"
+	apiRoutes "github.com/chartsmirror/routers"
 )
 
 var router *gin.Engine
@@ -20,11 +21,13 @@ func main() {
 	// Recovery middleware recovers from any panics and writes a 500 
 	router.Use(gin.Recovery())
 
-	mirror_router.RegisterAPIEndpoints(router)
+	apiRoutes.RegisterAPIEndpoints(router)
+
+	router.StaticFS("/static", http.Dir("static"))
 
 	router.LoadHTMLGlob("templates/*")
 
-	mirror_router.InitilaizeRoutes(router)
+	apiRoutes.InitilaizeRoutes(router)
 
 	router.Run(httpPort())
 }
