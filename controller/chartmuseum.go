@@ -5,6 +5,7 @@ import (
 	"log"
 	"io/ioutil"
 	"os"
+	"fmt"
 
 	"github.com/helm-dimensions/models"
 )
@@ -36,9 +37,35 @@ func GetCharts() map[string][]models.Chart {
 	return charts
 }
 
+//GetChartMetadata - Get Metadata of a particular chart
+func GetChartMetadata(chartName string) []models.Chart {
+	urlfull := getBaseURL() + "/" + chartName
+
+	log.Printf("Fetching the chartMetadata from  %v \n", urlfull)
+
+	response,err := http.Get(urlfull)
+
+	if err != nil {
+		log.Fatalf("Unable to retrieve chart data from %v - Error: %v", urlfull, err)
+	}
+
+	data, _ := ioutil.ReadAll(response.Body)
+
+	fmt.Println(string(data))
+
+	chartItem, err := models.GetNewChartItem(data)
+
+	if err != nil {
+		log.Printf("Unable to marshell data %v", err)
+	}
+
+	return chartItem
+
+}
+
 func getBaseURL() string {
 
-	baseURL := "http://localhost:9000"
+	baseURL := "http://pickles-charts.australiaeast.cloudapp.azure.com"
 
 	apiendpoint := os.Getenv("CHART_MUSEUM_URL")
 

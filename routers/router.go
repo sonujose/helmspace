@@ -12,5 +12,5 @@ func InitilaizeRoutes(router *gin.Engine) {
 
 	router.GET("/", apiHandler.ShowIndexPage)
 
-	router.GET("/chart", apiHandler.ShowChartPage)
+	router.GET("/chart/:name", apiHandler.ShowChartPage)
 }

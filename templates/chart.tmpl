@@ -1,0 +1,14 @@
+<!--Embed the header.html template at this location-->
+{{ template "header.tmpl" .}}
+
+<!-- Dashboard Card Tiles -->
+<div class='container'>
+  <div>Name: </div><h4>{{ (index .chartItem 0).Name }}</h4>
+  <div>Description: </div><h4>{{ (index .chartItem 0).Description }}</h4>
+  <div>AppVersion: </div><h4>{{ (index .chartItem 0).AppVersion }}</h4>
+  <div>Version: </div><h4>{{ (index .chartItem 0).Version }}</h4>
+  <div>Name: </div><h4>{{ (index .chartItem 0).Name }}</h4>
+</div>
+
+<!-- Footer section -->
+{{ template "footer.tmpl" .}}

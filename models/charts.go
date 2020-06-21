@@ -25,9 +25,21 @@ type Maintainer struct {
 	Email string `json:"email"`
 }
 
+// ChartItem - chart name
+type ChartItem struct {
+	Name string `uri:"name" binding:"required"`
+}
+
 // GetNewCharts - unmarshall data
 func GetNewCharts(data []byte) (map[string][]Chart, error) {
 	var c map[string][]Chart
+	err := json.Unmarshal(data, &c)
+	return c, err
+}
+
+// GetNewChartItem - unmarshall data
+func GetNewChartItem(data []byte) ([]Chart, error) {
+	var c []Chart
 	err := json.Unmarshal(data, &c)
 	return c, err
 }
