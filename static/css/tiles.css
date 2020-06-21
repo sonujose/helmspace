@@ -17,7 +17,7 @@ body {
     margin-bottom: 80px;
     min-height: 480px;
   }
-  body .wrapper label {
+  body .dash-tile {
     width: 200px;
     height: 200px;
     background: #181848 !important;
