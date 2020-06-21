@@ -3,7 +3,7 @@
 {{ template "header.tmpl" .}}
 
 <!-- Dashboard Card Tiles -->
-<div class='wrapper'>
+<div class='wrapper container'>
   {{range $k, $v:= .chartData}}
   <label>
     <div>
@@ -13,12 +13,15 @@
         {{else}}
         <img class="card-img-top" src="static/img/default_icon.png">
         {{end}}
+      </div>
+      <div class="chart-info">
+        <div>{{ (index $v 0).Name }}</div>
+        <div class="version">version : {{ (index $v 0).Version }}</div>
+      </div>
     </div>
-      <div>{{ (index $v 0).Name }}</div>
-    </div>
-    <div>Version : {{ (index $v 0).Version }}</div>
   </label>
   {{end}}
+   
 </div>
 
 <!-- Footer section -->

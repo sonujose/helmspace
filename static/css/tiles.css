@@ -2,9 +2,14 @@
 @import url(https://fonts.googleapis.com/css?family=Oswald);
 /* Variables */
 /* Styles */
+html{ height:100%; }
 body {
     font-family: "Oswald", sans-serif;
     margin: 0;
+    min-height:100%; padding:0; margin:0; position:relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
   body h1 {
     font-weight: normal;
@@ -24,16 +29,19 @@ body {
     overflow: hidden;
     text-align: center;
     position: relative;
+    margin-bottom: 80px;
+    min-height: 480px;
     /* I don't like this, i will probably replace with a sass loop at some point */
   }
   body .wrapper label {
     width: 200px;
     height: 200px;
-    background: #92b2cd;
+    background: #181848 !important;
     display: inline-block;
     border-radius: 2px;
     margin: 10px;
     cursor: pointer;
+    border: 1px solid #181848;
   }
   body .wrapper label span {
     color: white;
@@ -54,6 +62,8 @@ body {
     top: 25px;
     font-size: 10px;
   }
+
+
   body .wrapper label a {
     display: none;
     color: white;
@@ -116,8 +126,33 @@ body {
     transform-origin: 100% 100%;
   }
 
+.icon-container {
+  background: white;
+}
+
 .card-img-top {
     max-width: 90%;
     margin: 20px 10px;
     max-height: 80px;
+}
+
+.chart-info {
+  color: white;
+  margin-top: 5px;
+  font-weight: 100;
+  font-size: 20px; 
+}
+
+.version {
+ font-size: 12px; 
+}
+
+.chart-mirror-bg {
+  background: #181838 !important;
+  border: none;
+  border-radius: 0
+}
+
+.chart-mirror {
+  color: white !important
 }
