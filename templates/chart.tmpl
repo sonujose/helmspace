@@ -3,21 +3,77 @@
 
 <!-- Dashboard Card Tiles -->
 <div class='container chart-detail'>
-  <a class="btn btn-outline-success my-2 my-sm-0" href="/" style="color: white;background: #181868;">Home</a>
-  <h2>{{ (index .chartItem 0).Name }}</h2>
-  <div class="icon-container">
+
+  <!--Chart Image banner-->
+  <div class="chart-icon-container">
     {{ if (index .chartItem 0).Icon}}  
-    <img class="card-img-top" src={{ (index .chartItem 0).Icon }}>
+    <img class="card-img-top-detail" src={{ (index .chartItem 0).Icon }}>
     {{else}}
-    <img class="card-img-top" src="/static/img/default_icon.png">
+    <img class="card-img-top-detail" src="/static/img/default_icon.png">
     {{end}}
   </div>
-  <div><h3>{{ (index .chartItem 0).Description }}</h3> </div>
-  <div>Version: <span>{{ (index .chartItem 0).Version }}</span></div>
-  <div>AppVersion: <span>{{ (index .chartItem 0).AppVersion }}</span></div>
-  {{ if (index .chartItem 0).Home }}
-  <div>Home: <a target="_blank" href="{{ (index .chartItem 0).Home }}">{{ (index .chartItem 0).Home }}</a></div>
-  {{end}}
+
+  <!-- Add repo and Install chart-->
+  <div class="chart-install">
+    <h3>Add Repo</h3>
+    <input type="text" class="chart-install-input" name="firstname" value ="helm repo add demo https://my-chartsmuseum.com" readonly>
+    <h3>Install Chart</h3>
+    <input type="text" class="chart-install-input" name="firstname" value ="helm install release-1 demo/mychart" readonly>
+  </div>
+
+  <!--Chart description-->
+  <div class="chart-description">
+    <h2>{{ (index .chartItem 0).Name }}</h2>
+    <div>version: <span>{{ (index .chartItem 0).Version }}</div>
+    <div>{{ (index .chartItem 0).Description }}</div>
+  </div>
+
+  <!-- The chart page tab section -->
+  <div class="tabset">
+    <!--readme tab-->
+    <input type="radio" name="tabset" id="tab1" aria-controls="keriko" checked>
+    <label for="tab1">readme</label>
+    
+    <!--Info tab-->
+    <input type="radio" name="tabset" id="tab2" aria-controls="larboni">
+    <label for="tab2">Info</label>
+    
+    <!--versions tab-->
+    <input type="radio" name="tabset" id="tab3" aria-controls="bingo">
+    <label for="tab3">versions</label>
+    
+    <div class="tab-panels">
+      <!--readme section-->
+      <section id="keriko" class="tab-panel">
+        <div>
+        Introduction
+        This chart bootstraps an Apache Airflow deployment on a Kubernetes cluster using the Helm package manager.
+
+        Bitnami charts can be used with Kubeapps for deployment and management of Helm Charts in clusters. 
+        This Helm chart has been tested on top of Bitnami Kubernetes Production Runtime (BKPR). 
+        Deploy BKPR to get automated TLS certificates, logging and monitoring for your applications.
+        </div>
+      </section>
+
+      <!--info section-->
+      <section id="larboni" class="tab-panel">
+        <div>Version: <span>{{ (index .chartItem 0).Version }}</span></div>
+        <div>AppVersion: <span>{{ (index .chartItem 0).AppVersion }}</span></div>
+        {{ if (index .chartItem 0).Home }}
+        <div>Home: <a target="_blank" href="{{ (index .chartItem 0).Home }}">{{ (index .chartItem 0).Home }}</a></div>
+        {{end}}
+      </section>
+
+      <!--versions section-->
+      <section id="bingo" class="tab-panel">
+        <h2>Versions</h2>
+        <a href="">1.0.1</a>
+        <a href="">2.0.1</a>
+        <a href="">2.1.1</a>
+      </section>
+    </div>
+  </div>
+  
 </div>
 
 <!-- Footer section -->
