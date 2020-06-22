@@ -3,6 +3,7 @@
 
 <!-- Dashboard Card Tiles -->
 <div class='container chart-detail'>
+  <a class="btn btn-outline-success my-2 my-sm-0" href="/" style="color: white;background: #181868;">Home</a>
   <h2>{{ (index .chartItem 0).Name }}</h2>
   <div class="icon-container">
     {{ if (index .chartItem 0).Icon}}  
@@ -12,9 +13,11 @@
     {{end}}
   </div>
   <div><h3>{{ (index .chartItem 0).Description }}</h3> </div>
-  <div>AppVersion: <span>{{ (index .chartItem 0).AppVersion }}</span></div>
   <div>Version: <span>{{ (index .chartItem 0).Version }}</span></div>
+  <div>AppVersion: <span>{{ (index .chartItem 0).AppVersion }}</span></div>
+  {{ if (index .chartItem 0).Home }}
   <div>Home: <a target="_blank" href="{{ (index .chartItem 0).Home }}">{{ (index .chartItem 0).Home }}</a></div>
+  {{end}}
 </div>
 
 <!-- Footer section -->

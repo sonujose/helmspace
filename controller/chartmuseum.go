@@ -77,6 +77,9 @@ func getRepoURL() string {
 
 	url := repoURL + api
 
+	repo := models.Repo{ Name: "demo", URL: repoURL }
+
+	log.Printf("Repository - %s", repo.URL)
 	return url
 }
 
