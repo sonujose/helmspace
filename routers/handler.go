@@ -13,7 +13,10 @@ type handler struct {}
 
 
 func (h *handler) ShowIndexPage(c *gin.Context) {
-	charts := controller.GetCharts()
+
+	repoItem := controller.GetRepoDetails()
+
+	charts := controller.GetCharts(repoItem.URL)
 
 	data := gin.H{"title": "Helm-Dimensions", "chartData": charts}
 
@@ -31,10 +34,13 @@ func (h *handler) ShowChartPage(c *gin.Context) {
 		return
 	}
 
-	fmt.Printf("Chart name : %s \n" + chartData.Name)
-	chartItem := controller.GetChartMetadata(chartData.Name)
+	fmt.Printf("Chart name selected - %s \n", chartData.Name)
 
-	data := gin.H{"title": "Helm-Dimensions", "chartItem": chartItem}
+	repoItem := controller.GetRepoDetails()
+	
+	chartItem := controller.GetChartMetadata(chartData.Name, repoItem.URL)
+
+	data := gin.H{"title": "Helm-Dimensions", "chartItem": chartItem, "repoDetails": repoItem}
 
 	render(c, data, "chart.tmpl")
 }

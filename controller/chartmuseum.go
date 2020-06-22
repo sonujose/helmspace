@@ -5,26 +5,25 @@ import (
 	"log"
 	"io/ioutil"
 	"os"
-	"fmt"
 
 	"github.com/helm-dimensions/models"
 )
 
-// API Endpoint for chartmuseum server
+// DEFAULT: API Endpoint for chartmuseum server
 var api = "/api/charts"
 var repoURL = "http://localhost:9000"
 
 // GetCharts - Fetch Charts from Chartmuseum server
-func GetCharts() map[string][]models.Chart {
+func GetCharts(repoEndpoint string) map[string][]models.Chart {
 
-	urlfull := getRepoURL()
+	repoAPI := repoEndpoint + api
 
-	log.Printf("Fetching the url %v \n", urlfull)
+	log.Printf("Fetching the url %v \n", repoAPI)
 
-	response,err := http.Get(urlfull)
+	response,err := http.Get(repoAPI)
 
 	if err != nil {
-		log.Fatalf("Unable to retrieve chart data from %v - Error: %v", urlfull, err)
+		log.Fatalf("Unable to retrieve chart data from %v - Error: %v", repoAPI, err)
 	}
 
 	data, _ := ioutil.ReadAll(response.Body)
@@ -39,20 +38,19 @@ func GetCharts() map[string][]models.Chart {
 }
 
 //GetChartMetadata - Get Metadata from Chartmuseum server
-func GetChartMetadata(chartName string) []models.Chart {
-	urlfull := getRepoURL() + "/" + chartName
+func GetChartMetadata(chartName string, repoEndpoint string) []models.Chart {
+	
+	repoDetailAPI := repoEndpoint + api + "/" + chartName
 
-	log.Printf("Fetching the chartMetadata from  %v \n", urlfull)
+	log.Printf("Fetching the chartMetadata from  %v \n", repoDetailAPI)
 
-	response,err := http.Get(urlfull)
+	response,err := http.Get(repoDetailAPI)
 
 	if err != nil {
-		log.Fatalf("Unable to retrieve chart data from %v - Error: %v", urlfull, err)
+		log.Fatalf("Unable to retrieve chart data from %v - Error: %v", repoDetailAPI, err)
 	}
 
 	data, _ := ioutil.ReadAll(response.Body)
-
-	fmt.Println(string(data))
 
 	chartItem, err := models.GetNewChartItem(data)
 
@@ -64,22 +62,21 @@ func GetChartMetadata(chartName string) []models.Chart {
 
 }
 
+//GetRepoDetails - details and name of the chart Repo
 //TODO: Current Implemtation is limited to only one repo server 
-// - Future need to read from a configuration file
-func getRepoURL() string {
+// - Future need to read from a configuration file based on chart data
+func GetRepoDetails() models.Repo {
 
-	customRepoURL := os.Getenv("CHART_MUSEUM_URL")
+	RepoCM := os.Getenv("CHART_MUSEUM_URL")
 	
-	if customRepoURL != "" {
-		log.Printf("Chartmuseum server provided - %s", customRepoURL)
-		repoURL = customRepoURL
+	if RepoCM != "" {
+		log.Printf("Fetching repo from CHART_MUSEUM_URL - %s", RepoCM)
+		repoURL = RepoCM
 	}
 
-	url := repoURL + api
-
 	repo := models.Repo{ Name: "demo", URL: repoURL }
-
 	log.Printf("Repository - %s", repo.URL)
-	return url
+
+	return repo
 }
 
