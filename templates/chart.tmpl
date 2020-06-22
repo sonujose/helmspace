@@ -11,7 +11,7 @@
     <img class="card-img-top" src="/static/img/default_icon.png">
     {{end}}
   </div>
-  <div>Description: <span>{{ (index .chartItem 0).Description }}</span> </div>
+  <div><h3>{{ (index .chartItem 0).Description }}</h3> </div>
   <div>AppVersion: <span>{{ (index .chartItem 0).AppVersion }}</span></div>
   <div>Version: <span>{{ (index .chartItem 0).Version }}</span></div>
   <div>Home: <a target="_blank" href="{{ (index .chartItem 0).Home }}">{{ (index .chartItem 0).Home }}</a></div>
