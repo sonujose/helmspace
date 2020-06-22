@@ -10,6 +10,7 @@ type Chart struct {
 	Home        string       `json:"home"`
 	Sources     []string     `json:"sources"`
 	Version     string       `json:"version"`
+	AppVersion  string       `json:"appVersion"`
 	Description string       `json:"description"`
 	Maintainers []Maintainer `json:"maintainers"`
 	Engine      string       `json:"engine"`

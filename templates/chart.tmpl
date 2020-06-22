@@ -2,12 +2,19 @@
 {{ template "header.tmpl" .}}
 
 <!-- Dashboard Card Tiles -->
-<div class='container'>
-  <div>Name: </div><h4>{{ (index .chartItem 0).Name }}</h4>
-  <div>Description: </div><h4>{{ (index .chartItem 0).Description }}</h4>
-  <div>AppVersion: </div><h4>{{ (index .chartItem 0).AppVersion }}</h4>
-  <div>Version: </div><h4>{{ (index .chartItem 0).Version }}</h4>
-  <div>Name: </div><h4>{{ (index .chartItem 0).Name }}</h4>
+<div class='container chart-detail'>
+  <h2>{{ (index .chartItem 0).Name }}</h2>
+  <div class="icon-container">
+    {{ if (index .chartItem 0).Icon}}  
+    <img class="card-img-top" src={{ (index .chartItem 0).Icon }}>
+    {{else}}
+    <img class="card-img-top" src="/static/img/default_icon.png">
+    {{end}}
+  </div>
+  <div>Description: <span>{{ (index .chartItem 0).Description }}</span> </div>
+  <div>AppVersion: <span>{{ (index .chartItem 0).AppVersion }}</span></div>
+  <div>Version: <span>{{ (index .chartItem 0).Version }}</span></div>
+  <div>Home: <a target="_blank" href="{{ (index .chartItem 0).Home }}">{{ (index .chartItem 0).Home }}</a></div>
 </div>
 
 <!-- Footer section -->

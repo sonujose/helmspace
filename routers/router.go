@@ -5,7 +5,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-// InitilaizeRoutes - routes for app
+// InitilaizeRoutes - routes for the application
 func InitilaizeRoutes(router *gin.Engine) {
 	
 	apiHandler := handler{}

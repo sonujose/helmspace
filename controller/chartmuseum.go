@@ -12,18 +12,19 @@ import (
 
 // API Endpoint for chartmuseum server
 var api = "/api/charts"
+var repoURL = "http://localhost:9000"
 
-// GetCharts - Fetch sm charts
+// GetCharts - Fetch Charts from Chartmuseum server
 func GetCharts() map[string][]models.Chart {
 
-	urlfull := getBaseURL()
+	urlfull := getRepoURL()
 
 	log.Printf("Fetching the url %v \n", urlfull)
 
-	response,err := http.Get(getBaseURL())
+	response,err := http.Get(urlfull)
 
 	if err != nil {
-		log.Fatalf("Unable to retrieve chart data from %v - Error: %v", getBaseURL(), err)
+		log.Fatalf("Unable to retrieve chart data from %v - Error: %v", urlfull, err)
 	}
 
 	data, _ := ioutil.ReadAll(response.Body)
@@ -37,9 +38,9 @@ func GetCharts() map[string][]models.Chart {
 	return charts
 }
 
-//GetChartMetadata - Get Metadata of a particular chart
+//GetChartMetadata - Get Metadata from Chartmuseum server
 func GetChartMetadata(chartName string) []models.Chart {
-	urlfull := getBaseURL() + "/" + chartName
+	urlfull := getRepoURL() + "/" + chartName
 
 	log.Printf("Fetching the chartMetadata from  %v \n", urlfull)
 
@@ -63,20 +64,19 @@ func GetChartMetadata(chartName string) []models.Chart {
 
 }
 
-func getBaseURL() string {
+//TODO: Current Implemtation is limited to only one repo server 
+// - Future need to read from a configuration file
+func getRepoURL() string {
 
-	baseURL := "http://pickles-charts.australiaeast.cloudapp.azure.com"
-
-	apiendpoint := os.Getenv("CHART_MUSEUM_URL")
-
-	if apiendpoint != "" {
-		log.Printf("Chartmuseum server provided - %s", apiendpoint)
-		baseURL = apiendpoint
+	customRepoURL := os.Getenv("CHART_MUSEUM_URL")
+	
+	if customRepoURL != "" {
+		log.Printf("Chartmuseum server provided - %s", customRepoURL)
+		repoURL = customRepoURL
 	}
 
-	url := baseURL + api
+	url := repoURL + api
 
 	return url
-
 }
 

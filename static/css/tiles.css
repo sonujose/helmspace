@@ -4,9 +4,6 @@ body {
     font-family: "Oswald", sans-serif;
     margin: 0;
     min-height:100%; padding:0; margin:0; position:relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
   }
   body .wrapper {
     background: white;
@@ -26,10 +23,15 @@ body {
     margin: 10px;
     cursor: pointer;
     border: 1px solid #181848;
+    transition: transform .2s ease; /* Animation */
   }
-.icon-container {
-  background: white;
-}
+  body .dash-tile:hover {
+    transform: scale(1.1);
+  }
+  .icon-container {
+    background: white;  
+  }
+
 .card-img-top {
     max-width: 90%;
     margin: 20px 10px;
@@ -42,6 +44,7 @@ body {
   font-size: 20px; 
 }
 .version { font-size: 12px; }
+
 .chart-mirror-bg {
   background: #181838 !important;
   border: none;
@@ -50,3 +53,5 @@ body {
 .chart-mirror { color: white !important }
 
 .chart-mirror-search {padding: 10px}
+
+.chart-detail {min-height: 450px;}

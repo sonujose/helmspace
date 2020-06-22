@@ -4,6 +4,8 @@ footer p, footer strong, footer b, footer {
 footer {
     width: 100%;
     z-index: 11111;
+    position: absolute;
+    bottom: 0;
 }
 .footer-bottom {
     padding: 15px 0;
