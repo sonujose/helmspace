@@ -2,6 +2,7 @@ package models
 
 import (
 	"encoding/json"
+	"time"
 )
 
 // Chart reprecents a helm chart with all avaible info
@@ -16,7 +17,7 @@ type Chart struct {
 	Engine      string       `json:"engine"`
 	Icon        string       `json:"icon"`
 	Urls        []string     `json:"urls"`
-	Created     string       `json:"created"`
+	Created     time.Time    `json:"created"`
 	Digest      string       `json:"digest"`
 }
 

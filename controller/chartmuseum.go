@@ -68,7 +68,7 @@ func GetChartMetadata(chartName string, repoEndpoint string) []models.Chart {
 func GetRepoDetails() models.Repo {
 
 	RepoCM := os.Getenv("CHART_MUSEUM_URL")
-	
+
 	if RepoCM != "" {
 		log.Printf("Fetching repo from CHART_MUSEUM_URL - %s", RepoCM)
 		repoURL = RepoCM
