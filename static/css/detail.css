@@ -66,9 +66,12 @@
     box-sizing: border-box;
   }
   
-  .tabset { max-width: 60em; margin-top: 40px;}
+  .tabset { max-width: 60em; margin-top: 23px;}
   .chart-install {color: #181838; float: right; padding: 2px;}
   .card-img-top-detail {max-height: 100px }
-  .chart-icon-container {background: white; border-bottom: 1px solid; padding: 15px; text-align: center;}
+  .chart-icon-container {background: white;}
   .chart-install-input {padding: 10px 0px; width: 225px; border:none; border-bottom: 1px solid #181838;}
-  .chart-description {line-height: 3rem;}
+  .chart-description {margin: 10px 5px; font-size: 17px;}
+  .chart-name {font-size: 30px;}
+  .chart-box {display: flex}
+  .chart-metadata {margin: 12px;}

@@ -4,15 +4,6 @@
 <!-- Dashboard Card Tiles -->
 <div class='container chart-detail'>
 
-  <!--Chart Image banner-->
-  <div class="chart-icon-container">
-    {{ if (index .chartItem 0).Icon}}  
-    <img class="card-img-top-detail" src={{ (index .chartItem 0).Icon }}>
-    {{else}}
-    <img class="card-img-top-detail" src="/static/img/default_icon.png">
-    {{end}}
-  </div>
-
   <!-- Add repo and Install chart-->
   <div class="chart-install">
     <h3>Add Repo</h3>
@@ -21,26 +12,46 @@
     <input type="text" class="chart-install-input" name="firstname" value ="helm install release-1 demo/mychart" readonly>
   </div>
 
-  <!--Chart description-->
-  <div class="chart-description">
-    <h2>{{ (index .chartItem 0).Name }}</h2>
-    <div>version: <span>{{ (index .chartItem 0).Version }}</div>
-    <div>{{ (index .chartItem 0).Description }}</div>
+  <!--Chart box-icon & name-->
+  <div class="chart-box">
+    <div class="chart-icon-container">
+      {{ if (index .chartItem 0).Icon}}  
+      <img class="card-img-top-detail" src={{ (index .chartItem 0).Icon }}>
+      {{else}}
+      <img class="card-img-top-detail" src="/static/img/default_icon.png">
+      {{end}}
+    </div>
+    <div class="chart-metadata">
+      <div class="chart-name">{{ (index .chartItem 0).Name }}</div>
+      <div>version: {{ (index .chartItem 0).Version }}</div>
+      <div>Public • Published 21 days ago</div>
+    </div>
   </div>
+
+  <!--Chart Description-->
+  <div class="chart-description">{{ (index .chartItem 0).Description }}</div>
 
   <!-- The chart page tab section -->
   <div class="tabset">
     <!--readme tab-->
     <input type="radio" name="tabset" id="tab1" aria-controls="keriko" checked>
-    <label for="tab1">readme</label>
+    <label for="tab1">Readme</label>
     
+    <!--Visualize tab-->
+    <input type="radio" name="tabset" id="tab2" aria-controls="maxoni">
+    <label for="tab2">Visualize</label>
+
     <!--Info tab-->
-    <input type="radio" name="tabset" id="tab2" aria-controls="larboni">
-    <label for="tab2">Info</label>
+    <input type="radio" name="tabset" id="tab3" aria-controls="larboni">
+    <label for="tab3">Info</label>
     
     <!--versions tab-->
-    <input type="radio" name="tabset" id="tab3" aria-controls="bingo">
-    <label for="tab3">versions</label>
+    <input type="radio" name="tabset" id="tab4" aria-controls="bingo">
+    <label for="tab4">Versions</label>
+
+     <!--versions tab-->
+    <input type="radio" name="tabset" id="tab5" aria-controls="plekora">
+    <label for="tab5">Dependencies</label>
     
     <div class="tab-panels">
       <!--readme section-->
@@ -52,6 +63,13 @@
         Bitnami charts can be used with Kubeapps for deployment and management of Helm Charts in clusters. 
         This Helm chart has been tested on top of Bitnami Kubernetes Production Runtime (BKPR). 
         Deploy BKPR to get automated TLS certificates, logging and monitoring for your applications.
+        </div>
+      </section>
+
+      <!--visualize section-->
+      <section id="maxoni" class="tab-panel">
+        <div>
+          Feature Coming Soon!!
         </div>
       </section>
 
@@ -71,6 +89,17 @@
         <a href="">2.0.1</a>
         <a href="">2.1.1</a>
       </section>
+
+      <!--Dependency section-->
+      <section id="plekora" class="tab-panel">
+        <div>
+          Primary Dependency of the charts
+          <ul>
+            <li>Postgres</li>
+          </ul>
+        </div>
+      </section>
+
     </div>
   </div>
   
