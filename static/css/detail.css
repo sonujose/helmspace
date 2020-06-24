@@ -20,7 +20,6 @@
     position: relative;
     display: inline-block;
     padding: 13px;
-    border: 1px solid transparent;
     border-bottom: 0;
     cursor: pointer;
     font-weight: 300;
@@ -32,10 +31,7 @@
   .tabset > label::after {
     content: "";
     position: absolute;
-    left: 15px;
-    bottom: 5px;
-    width: 100px;
-    height: 4px;
+    left: 15px; bottom: 5px; width: 100px; height: 4px;
     background: #8d8d8d;
   }
   
@@ -59,13 +55,7 @@
   }
   
   .tab-panel { padding: 30px 0; border-top: 1px solid #ccc;}
- 
-  *,
-  *:before,
-  *:after {
-    box-sizing: border-box;
-  }
-  
+   
   .tabset { max-width: 60em; margin-top: 23px;}
   .chart-install {color: #181838; float: right; padding: 2px;}
   .card-img-top-detail {max-height: 100px }

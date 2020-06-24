@@ -30,12 +30,13 @@ body {
   }
   .icon-container {
     background: white;  
+    height: 130px;
   }
 
 .card-img-top {
     max-width: 90%;
     margin: 20px 10px;
-    max-height: 80px;
+    max-height: 90px;
 }
 .chart-info {
   color: white;

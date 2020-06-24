@@ -9,24 +9,8 @@ footer {
 }
 .footer-bottom {
     padding: 15px 0;
-    border-top: 1px solid #313646;
     background-color: #181828 !important;
-    color: #b0b0b0;
     font-family: "Oswald", sans-serif;;
-}
-.footer-site-info {
-    font-size: 15px;
-}
-.footer-bottom ul {
-    margin: 0;
-}
-footer p, footer li {
-    font-size: 15px;
-    line-height: 22px;
-}
-footer p {
-    line-height: 24px;
-    margin-bottom: 10px;font-size: 15px;
 }
 .footer-site-info
 {
