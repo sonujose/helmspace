@@ -18,11 +18,17 @@ The current version only supports Chartmuseum Helm server, future release will s
 * [gin-gonic](https://gin-gonic.com/) - The web framework for GO
 * [go](https://golang.org/) - Programing language
 
-## Working Locally with Chartmuseum Server
-```
-# Provide the chartmuseum server url
-setx CHART_MUSEUM_URL "http://my-chartmuseum-server"
+## Configuration
 
+| Parameter          | Default                  | Description          |
+| ------------------ | ------------------------ | ---------------------|
+|CHART_MUSEUM_URL    | http://localhost:9000    |  URL Endpoint of your chartmuseum server |
+|CHART_MUSEUM_API    | /api/charts              |  Chartmuseum API Endpoint                |
+|APP_PORT            | 5000                     |  Application Port                        |
+
+## Working Locally
+
+```
 go build
 
 ./helm-dimensions
