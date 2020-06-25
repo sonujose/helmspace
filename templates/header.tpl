@@ -27,4 +27,4 @@
 
   <body>
     <!--Embed the menu.html template at this location-->
-    {{ template "menu.tmpl" . }}
+    {{ template "menu.tpl" . }}

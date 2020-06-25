@@ -20,7 +20,7 @@ func (h *handler) ShowIndexPage(c *gin.Context) {
 
 	data := gin.H{"title": "Helm-Dimensions", "chartData": charts}
 
-	render(c, data, "index.tmpl")
+	render(c, data, "index.tpl")
 }
 
 func (h *handler) ShowChartPage(c *gin.Context) {
@@ -42,7 +42,7 @@ func (h *handler) ShowChartPage(c *gin.Context) {
 
 	data := gin.H{"title": "Helm-Dimensions", "chartItem": chartItem, "repoDetails": repoItem}
 
-	render(c, data, "chart.tmpl")
+	render(c, data, "chart.tpl")
 }
 
 func render(c *gin.Context, data gin.H, templateName string) {

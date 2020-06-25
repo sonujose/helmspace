@@ -1,5 +1,5 @@
 <!--Embed the header.html template at this location-->
-{{ template "header.tmpl" .}}
+{{ template "header.tpl" .}}
 
 <!-- Dashboard Card Tiles -->
 <div class='container chart-detail'>
@@ -122,4 +122,4 @@
 </div>
 
 <!-- Footer section -->
-{{ template "footer.tmpl" .}}
+{{ template "footer.tpl" .}}
