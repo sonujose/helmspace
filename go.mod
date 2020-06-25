@@ -1,4 +1,4 @@
-module github.com/helm-dimensions
+module github.com/sonujose/helmer
 
 go 1.13
 

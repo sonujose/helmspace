@@ -1,13 +1,13 @@
 <img src="./static/img/icons/apple-touch-icon.png" height="90" width="90">
 
-# Helm-Dimensions
+# Helmer
 
 [![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs)
 [![Version](https://badge.fury.io/gh/tterb%2FHyde.svg)](https://badge.fury.io/gh/tterb%2FHyde)
 
-Helm-Dimensions is a web UI dashboard to visualize and manage charts in your Helm repo server. The application is fully written in go language using the gin-gonic web framework.
+helmer is a web UI dashboard to visualize and manage charts in your Helm repo server. The application is fully written in go language using the gin-gonic web framework.
 
-<img src="./docs/detailspage.PNG"></div>
+<img src="./docs/helmer-dash.PNG"></div>
 
 ## Limitations
 The current version only supports Chartmuseum Helm server, future release will support all sorts of Helm servers
@@ -30,5 +30,5 @@ The current version only supports Chartmuseum Helm server, future release will s
 ```
 go build
 
-./helm-dimensions
+./helmer
 ```

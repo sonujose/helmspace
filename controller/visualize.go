@@ -3,8 +3,8 @@ package controller
 import(
 	"log"
 
-	"github.com/helm-dimensions/utilities"
-	"github.com/helm-dimensions/models"
+	"github.com/sonujose/helmer/utilities"
+	"github.com/sonujose/helmer/models"
 )
 
 // FetchChartReadme - Get Chartdate readme content

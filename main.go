@@ -7,7 +7,7 @@ import (
 
 	"github.com/gin-gonic/gin"
 
-	handler "github.com/helm-dimensions/handlers"
+	handler "github.com/sonujose/helmer/handlers"
 )
 
 var router *gin.Engine
