@@ -5,8 +5,8 @@ import (
 	"fmt"
 
 	"github.com/gin-gonic/gin"
-	"github.com/helm-dimensions/controller"
-	"github.com/helm-dimensions/models"
+	"github.com/sonujose/helmer/controller"
+	"github.com/sonujose/helmer/models"
 )
 
 type handler struct {}
@@ -18,7 +18,7 @@ func (h *handler) ShowIndexPage(c *gin.Context) {
 
 	charts := controller.GetCharts(repoItem.URL)
 
-	data := gin.H{"title": "Helm-Dimensions", "chartData": charts}
+	data := gin.H{"title": "Helmer", "chartData": charts}
 
 	render(c, data, "index.tpl")
 }
@@ -40,7 +40,7 @@ func (h *handler) ShowChartPage(c *gin.Context) {
 	
 	chartItem := controller.GetChartMetadata(chartData.Name, repoItem.URL)
 
-	data := gin.H{"title": "Helm-Dimensions", "chartItem": chartItem, "repoDetails": repoItem}
+	data := gin.H{"title": "Helmer", "chartItem": chartItem, "repoDetails": repoItem}
 
 	render(c, data, "chart.tpl")
 }
