@@ -32,6 +32,12 @@ type ChartItem struct {
 	Name string `uri:"name" binding:"required"`
 }
 
+// ChartVersion - chart version
+type ChartVersion struct {
+	Name string `uri:"name" binding:"required"`
+	Version string `uri:"version" binding:"required"`
+}
+
 // GetNewCharts - unmarshall data
 func GetNewCharts(data []byte) (map[string][]Chart, error) {
 	var c map[string][]Chart

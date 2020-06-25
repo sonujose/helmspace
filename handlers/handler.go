@@ -45,6 +45,27 @@ func (h *handler) ShowChartPage(c *gin.Context) {
 	render(c, data, "chart.tpl")
 }
 
+func (h *handler) GetChartDetailReadme(c *gin.Context) {
+	var chartData models.ChartVersion
+
+	err := c.ShouldBindUri(&chartData); 
+
+	if err != nil {
+		c.JSON(400, gin.H{"msg": err})
+		return
+	}
+
+	fmt.Printf("Chart name - %s , version - %s \n", chartData.Name, chartData.Version)
+
+	repoItem := controller.GetRepoDetails()
+	
+	readmeData := controller.FetchChartReadme(repoItem.URL, chartData)
+
+	c.JSON(http.StatusOK, map[string]string{
+		"readMe": *readmeData,
+	})
+}
+
 func render(c *gin.Context, data gin.H, templateName string) {
 	c.HTML(http.StatusOK, templateName, data)
 }
