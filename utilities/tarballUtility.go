@@ -25,8 +25,6 @@ func GetFileBlobFromTarBall(tarURL string, fileName string) (*string, error) {
 	defer res.Body.Close()
 
     gzipStream, err := gzip.NewReader(res.Body)
-    
-    log.Printf("Response from server data %v", gzipStream)
 
 	if err != nil {
 		return blobData, err
@@ -59,8 +57,6 @@ func GetFileBlobFromTarBall(tarURL string, fileName string) (*string, error) {
         }
 
     }
-    
-    log.Printf("BlobData = %s", *blobData)
     
 	return blobData, nil
 }
