@@ -5,8 +5,8 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-// InitilaizeRoutes - routes for the application
-func InitilaizeRoutes(router *gin.Engine) {
+// ReisterApplicationRoutes - routes for the application
+func ReisterApplicationRoutes(router *gin.Engine) {
 	
 	apiHandler := handler{}
 

@@ -7,7 +7,7 @@ import (
 
 	"github.com/gin-gonic/gin"
 
-	apiRoutes "github.com/helm-dimensions/handlers"
+	handler "github.com/helm-dimensions/handlers"
 )
 
 var router *gin.Engine
@@ -21,13 +21,13 @@ func main() {
 	// Recovery middleware recovers from any panics and writes a 500 
 	router.Use(gin.Recovery())
 
-	apiRoutes.RegisterAPIEndpoints(router)
+	handler.RegisterAPIEndpoints(router)
 
 	router.StaticFS("/static", http.Dir("static"))
 
 	router.LoadHTMLGlob("templates/*")
 
-	apiRoutes.InitilaizeRoutes(router)
+	handler.ReisterApplicationRoutes(router)
 
 	router.Run(httpPort())
 }
