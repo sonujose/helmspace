@@ -15,3 +15,5 @@
 # vendor/
 
 charts.json
+
+helm-dimensions
