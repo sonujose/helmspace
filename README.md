@@ -7,8 +7,7 @@
 
 Helm-Dimensions is a web UI dashboard to visualize and manage charts in your Helm repo server. The application is fully written in go language using the gin-gonic web framework.
 
-<div style="display:flex"><img src="./docs/dashboard2.PNG" width="350">
-<img src="./docs/details-page.PNG" width="350"></div>
+<img src="./docs/detailspage.PNG"></div>
 
 ## Limitations
 The current version only supports Chartmuseum Helm server, future release will support all sorts of Helm servers
