@@ -18,12 +18,16 @@ The application is fully written in go language using the gin-gonic web framewor
 * [go](https://golang.org/) - Programing language
 * [go-modules](https://github.com/golang/go/wiki/Modules) - Go Package management
 
-You need go 1.11+ installed in the machine. 
+You need go 1.11+ installed in the machine for building the application without Docker. 
+
+Development using Docker
 
 ```s
-go build
+# Setup env file for docker-compose
+file="app.env"
+echo "CHART_MUSEUM_URL=http://localhost:9000" > $file
 
-./helmer
+docker-compose up
 ```
 
 ## Configuration
