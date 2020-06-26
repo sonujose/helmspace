@@ -13,4 +13,6 @@ WORKDIR /root/
 
 COPY --from=builder /go/src/app .
 
+EXPOSE 5000
+
 ENTRYPOINT ["./helmerapp"]
