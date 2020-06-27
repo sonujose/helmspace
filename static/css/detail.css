@@ -68,10 +68,14 @@
     background: #181838;margin-top: 23px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
   }
+  .chart-banner {background: #f5deb34d;}
   .card-img-top-detail {max-height: 100px }
   .chart-icon-container {background: white;}
   .chart-install-input {padding: 10px; width: 225px; border:none; color:#181848; margin-bottom:10px}
-  .chart-description {margin: 10px 15px; font-size: 17px;}
+  .chart-description {margin: 0px 15px 20px; font-size: 17px;}
   .chart-name {font-size: 30px;}
-  .chart-box {display: flex; padding: 15px;}
+  .chart-box {display: flex; padding: 15px; justify-content: space-between; padding-bottom: 0;}
+  .chart-box-left {display: flex; padding-top: 15px;}
+  .chart-box-right {padding: 30px;text-align: center; width: 300px;}
   .chart-metadata {margin: 12px;}
+  .banner-btn {padding: 10px 30px; background: red; color: white; width: 130px; height: 40px; margin-bottom: 4px;}
