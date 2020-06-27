@@ -16,6 +16,12 @@
     display: block;
   }
 
+  .tab-icon {
+    color: red;
+    font-size: 16px;
+    margin-right: 3px;
+  }
+
   .tabset > label {
     position: relative;
     display: inline-block;
@@ -24,14 +30,15 @@
     cursor: pointer;
     font-weight: 300;
     text-align: center;
-    width: 130px;
+    width: 180px;
     font-size: 15px;
+    background: #f5deb34d;
   }
   
   .tabset > label::after {
     content: "";
     position: absolute;
-    left: 15px; bottom: 5px; width: 100px; height: 4px;
+    left: 20px; bottom: 5px; width: 140px; height: 4px;
     background: #8d8d8d;
   }
   
@@ -57,11 +64,14 @@
   .tab-panel { padding: 30px 0; border-top: 1px solid #ccc;}
    
   .tabset { max-width: 60em; margin-top: 23px;}
-  .chart-install {color: #181838; float: right; padding: 2px;}
+  .chart-install {color: white; padding: 20px 30px; 
+    background: #181838;margin-top: 23px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  }
   .card-img-top-detail {max-height: 100px }
   .chart-icon-container {background: white;}
-  .chart-install-input {padding: 10px 0px; width: 225px; border:none; border-bottom: 1px solid #181838;}
-  .chart-description {margin: 10px 5px; font-size: 17px;}
+  .chart-install-input {padding: 10px; width: 225px; border:none; color:#181848; margin-bottom:10px}
+  .chart-description {margin: 10px 15px; font-size: 17px;}
   .chart-name {font-size: 30px;}
-  .chart-box {display: flex}
+  .chart-box {display: flex; padding: 15px;}
   .chart-metadata {margin: 12px;}

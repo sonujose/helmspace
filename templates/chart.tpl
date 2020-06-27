@@ -1,17 +1,9 @@
 <!--Embed the header.html template at this location-->
 {{ template "header.tpl" .}}
 
+<div class="main-page">
 <!-- Dashboard Card Tiles -->
-<div class='container chart-detail'>
-
-  <!-- Add repo and Install chart-->
-  <div class="chart-install">
-    <h3>Add Repo</h3>
-    {{ $repoAddCommand := printf "helm repo add %s %s" .repoDetails.Name .repoDetails.URL }}
-    <input type="text" class="chart-install-input" name="firstname" value ="{{ $repoAddCommand }}" readonly>
-    <h3>Install Chart</h3>
-    <input type="text" class="chart-install-input" name="firstname" value ="helm install release-1 {{.repoDetails.Name}}/{{ (index .chartItem 0).Name }}" readonly>
-  </div>
+<div class='container'>
 
   <!--Chart box-icon & name-->
   <div class="chart-box">
@@ -32,27 +24,27 @@
   <!--Chart Description-->
   <div class="chart-description">{{ (index .chartItem 0).Description }}</div>
 
+</div>
+
+<div class="container">
+
   <!-- The chart page tab section -->
-  <div class="tabset">
+  <div class="tabset col-md-9">
     <!--readme tab-->
     <input type="radio" name="tabset" id="tab1" aria-controls="keriko" checked>
-    <label for="tab1">Readme</label>
+    <label for="tab1"><i class="fa fa-file-text-o tab-icon" ></i> Readme</label>
     
     <!--Visualize tab-->
     <input type="radio" name="tabset" id="tab2" aria-controls="maxoni">
-    <label for="tab2">Visualize</label>
-
-    <!--Info tab-->
-    <input type="radio" name="tabset" id="tab3" aria-controls="larboni">
-    <label for="tab3">Info</label>
+    <label for="tab2"><i class="fa fa fa-dashboard tab-icon" ></i>Visualize</label>
     
     <!--versions tab-->
     <input type="radio" name="tabset" id="tab4" aria-controls="bingo">
-    <label for="tab4">Versions</label>
+    <label for="tab4"><i class="fa fa-tags tab-icon" ></i>Versions</label>
 
-     <!--versions tab-->
+    <!--versions tab-->
     <input type="radio" name="tabset" id="tab5" aria-controls="plekora">
-    <label for="tab5">Dependencies</label>
+    <label for="tab5"><i class="fa fa fa-plug tab-icon"></i>Dependencies</label>
     
     <div class="tab-panels">
       <!--readme section-->
@@ -72,15 +64,6 @@
         <div>
           Feature Coming Soon!!
         </div>
-      </section>
-
-      <!--info section-->
-      <section id="larboni" class="tab-panel">
-        <div>Version: <span>{{ (index .chartItem 0).Version }}</span></div>
-        <div>AppVersion: <span>{{ (index .chartItem 0).AppVersion }}</span></div>
-        {{ if (index .chartItem 0).Home }}
-        <div>Home: <a target="_blank" href="{{ (index .chartItem 0).Home }}">{{ (index .chartItem 0).Home }}</a></div>
-        {{end}}
       </section>
 
       <!-- versions section -->
@@ -115,11 +98,21 @@
           </ul>
         </div>
       </section>
-
     </div>
+    
   </div>
+
+  <!-- Add repo and Install chart-->
+  <div class="chart-install col-md-3">
+    <div>Add Repo</div>
+    {{ $repoAddCommand := printf "helm repo add %s %s" .repoDetails.Name .repoDetails.URL }}
+    <input type="text" class="chart-install-input" name="firstname" value ="{{ $repoAddCommand }}" readonly>
+    <div>Install Chart</div>
+    <input type="text" class="chart-install-input" name="firstname" value ="helm install release-1 {{.repoDetails.Name}}/{{ (index .chartItem 0).Name }}" readonly>
+  </div> 
   
 </div>
 
+</div>
 <!-- Footer section -->
 {{ template "footer.tpl" .}}
