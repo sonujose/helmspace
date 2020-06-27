@@ -61,56 +61,25 @@
       <label for="tab5"><i class="fa fa fa-plug tab-icon"></i>Dependencies</label>
       
       <div class="tab-panels">
+
         <!--readme section-->
         <section id="keriko" class="tab-panel">
-          <div>
-          Introduction
-          This chart bootstraps an Apache Airflow deployment on a Kubernetes cluster using the Helm package manager.
-
-          Bitnami charts can be used with Kubeapps for deployment and management of Helm Charts in clusters. 
-          This Helm chart has been tested on top of Bitnami Kubernetes Production Runtime (BKPR). 
-          Deploy BKPR to get automated TLS certificates, logging and monitoring for your applications.
-          </div>
+          {{ template "readme.tpl" .}}
         </section>
 
         <!--visualize section-->
         <section id="maxoni" class="tab-panel">
-          <div>
-            Feature Coming Soon!!
-          </div>
+          {{ template "visualize.tpl" .}}
         </section>
 
         <!-- versions section -->
         <section id="bingo" class="tab-panel">
-          <table class="table table-dark">
-            <thead>
-              <tr>
-                <th scope="col">Version</th>
-                <th scope="col">AppVersion</th>
-                <th scope="col">Created On</th>
-              </tr>
-            </thead>
-            <tbody>
-            {{range $v:= .chartItem}}
-              <tr>
-                <td>{{ $v.Version }}</td>
-                <td>{{ $v.AppVersion }}</td>
-                <td>{{ $v.Created.Format "Jan 02, 2006 15:04:05 UTC" }}</td>
-                <td><a href="{{$.repoDetails.URL}}/{{ (index $v.Urls 0) }}">Download</a></td>
-              </tr>
-              {{end}}
-            </tbody>
-          </table>
+          {{ template "visualize.tpl" .}}
         </section>
 
         <!--Dependency section-->
         <section id="plekora" class="tab-panel">
-          <div>
-            Primary Dependency of the charts
-            <ul>
-              <li>Postgres</li>
-            </ul>
-          </div>
+          {{ template "dependency.tpl" .}}
         </section>
       </div>
       
