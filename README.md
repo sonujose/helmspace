@@ -9,7 +9,7 @@ Helmer is a web UI dashboard to visualize and manage charts in your Helm reposit
 
 ## Docker Image Usage
 
-The Docker image available at [bhsonu/helmer](https://docker.io/bhsonu/helmer/)
+The Docker image available at [bhsonu/helmer](https://hub.docker.com/r/bhsonu/helmer)
 
 Chartmusum server url is required to run the application. Refer to [Chartmuseum](https://github.com/helm/chartmuseum) to setup Chartmuseum server
 
