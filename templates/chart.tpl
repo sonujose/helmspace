@@ -45,40 +45,40 @@
     <!-- The chart page tab section -->
     <div class="tabset col-md-9">
       <!--readme tab-->
-      <input type="radio" name="tabset" id="tab1" aria-controls="keriko" checked>
+      <input type="radio" name="tabset" id="tab1" aria-controls="readme" checked>
       <label for="tab1"><i class="fa fa-file-text-o tab-icon" ></i> Readme</label>
       
       <!--Visualize tab-->
-      <input type="radio" name="tabset" id="tab2" aria-controls="maxoni">
+      <input type="radio" name="tabset" id="tab2" aria-controls="visualize">
       <label for="tab2"><i class="fa fa fa-dashboard tab-icon" ></i>Visualize</label>
       
       <!--versions tab-->
-      <input type="radio" name="tabset" id="tab4" aria-controls="bingo">
+      <input type="radio" name="tabset" id="tab4" aria-controls="versions">
       <label for="tab4"><i class="fa fa-tags tab-icon" ></i>Versions</label>
 
       <!--versions tab-->
-      <input type="radio" name="tabset" id="tab5" aria-controls="plekora">
+      <input type="radio" name="tabset" id="tab5" aria-controls="dependency">
       <label for="tab5"><i class="fa fa fa-plug tab-icon"></i>Dependencies</label>
       
       <div class="tab-panels">
 
         <!--readme section-->
-        <section id="keriko" class="tab-panel">
+        <section id="readme" class="tab-panel">
           {{ template "readme.tpl" .}}
         </section>
 
         <!--visualize section-->
-        <section id="maxoni" class="tab-panel">
+        <section id="visualize" class="tab-panel">
           {{ template "visualize.tpl" .}}
         </section>
 
         <!-- versions section -->
-        <section id="bingo" class="tab-panel">
-          {{ template "visualize.tpl" .}}
+        <section id="versions" class="tab-panel">
+          {{ template "versions.tpl" .}}
         </section>
 
         <!--Dependency section-->
-        <section id="plekora" class="tab-panel">
+        <section id="dependency" class="tab-panel">
           {{ template "dependency.tpl" .}}
         </section>
       </div>
