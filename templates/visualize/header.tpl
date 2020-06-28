@@ -25,8 +25,8 @@
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 
     <!-- Visualize library scripts -->
-    <script src="/static/js/springy.js"></script>
-    <script src="/static/js/springyui.js"></script>
+    <script src="/static/js/springy.min.js"></script>
+    <script src="/static/js/springyui.min.js"></script>
   </head>
 
   <body>
