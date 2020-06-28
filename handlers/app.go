@@ -13,4 +13,6 @@ func ReisterApplicationRoutes(router *gin.Engine) {
 	router.GET("/", apiHandler.ShowIndexPage)
 
 	router.GET("/chart/:name", apiHandler.ShowChartPage)
+
+	router.GET("/visualize/:name", apiHandler.ShowVisualizePage)
 }

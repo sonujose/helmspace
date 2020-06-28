@@ -1,6 +1,7 @@
+{{ define "charts/index.tpl" }}
 
 <!--Embed the header.html template at this location-->
-{{ template "header.tpl" .}}
+{{ template "charts/header.tpl" .}}
 
 <!-- Dashboard Card Tiles -->
 <div class='wrapper container'>
@@ -22,4 +23,6 @@
 </div>
 
 <!-- Footer section -->
-{{ template "footer.tpl" .}}
+{{ template "charts/footer.tpl" .}}
+
+{{ end }}

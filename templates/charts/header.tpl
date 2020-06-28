@@ -1,9 +1,11 @@
+{{ define "charts/header.tpl" }}
+
 <!doctype html>
 <html>
 
   <head>
     <!--Use the title variable to set the title of the page-->
-    <title>Helmer</title>
+    <title>Helmspace</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
 
@@ -28,4 +30,6 @@
 
   <body>
     <!--Embed the menu.html template at this location-->
-    {{ template "menu.tpl" . }}
+    {{ template "charts/menu.tpl" . }}
+
+{{ end }}

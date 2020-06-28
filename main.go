@@ -7,7 +7,7 @@ import (
 
 	"github.com/gin-gonic/gin"
 
-	handler "github.com/sonujose/helmer/handlers"
+	handler "github.com/sonujose/helmspace/handlers"
 )
 
 var router *gin.Engine
@@ -25,7 +25,7 @@ func main() {
 
 	router.StaticFS("/static", http.Dir("static"))
 
-	router.LoadHTMLGlob("templates/*")
+	router.LoadHTMLGlob("templates/**/*")
 
 	handler.ReisterApplicationRoutes(router)
 

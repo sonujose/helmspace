@@ -4,15 +4,15 @@ WORKDIR /go/src/app
  
 COPY . .
 
-RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o helmerapp .
+RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o helmspace .
 
 FROM alpine:3.12 
 RUN apk --no-cache add ca-certificates
 
-WORKDIR /root/
+WORKDIR /usr/app/
 
 COPY --from=builder /go/src/app .
 
 EXPOSE 5000
 
-ENTRYPOINT ["./helmerapp"]
+ENTRYPOINT ["./helmspace"]

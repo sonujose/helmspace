@@ -1,10 +1,11 @@
+{{ define "charts/menu.tpl" }}
 
 <nav class="navbar navbar-default chart-mirror-bg">
     <div class="container">
       <div class="navbar-header">
         <a class="navbar-brand chart-mirror" href="/">
         <img src="/static/img/icons/apple-touch-icon.png" style="display:inline-block;margin-bottom:4px" width="30" height="30" class="d-inline-block align-top" alt="">
-          <span>Helmer</span>
+          <span>Helmspace</span>
         </a>
       </div>
       <div class="collapse navbar-collapse" style="float:right" id="navbarSupportedContent">
@@ -15,3 +16,5 @@
       </div>
     </div>
   </nav>
+
+{{ end }}
