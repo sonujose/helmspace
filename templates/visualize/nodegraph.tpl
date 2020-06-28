@@ -1,11 +1,11 @@
-<script src="/static/js/springy.js"></script>
-<script src="/static/js/springyui.js"></script>
+{{ define "visualize/nodegraph.tpl" }}
+
 <script>
 var graph = new Springy.Graph();
 
 var dennis = graph.newNode({
-  label: 'Hexagonal-microservice',
-  ondoubleclick: function() { console.log("Hello!"); }
+  label: 'dev-microservice',
+  ondoubleclick: function() { console.log("Node clicked"); }
 });
 var michael = graph.newNode({label: 'Deployment'});
 var jessica = graph.newNode({label: 'Service'});
@@ -17,8 +17,8 @@ var james = graph.newNode({label: 'Daemonset'});
 var bianca = graph.newNode({label: 'Ingress'});
 
 var dennis2 = graph.newNode({
-  label: 'Core-microservice',
-  ondoubleclick: function() { console.log("Hello!"); }
+  label: 'new-microservice',
+  ondoubleclick: function() { console.log("Node clicked"); }
 });
 var michael2 = graph.newNode({label: 'Deployment'});
 var jessica2 = graph.newNode({label: 'Service'});
@@ -50,9 +50,7 @@ jQuery(function(){
 
 <canvas id="springydemo" width="740" height="580" />
 
-<div>
-    Feature Coming Soon!! <i class="fa fa-spinner fa-spin" style="font-size:48px;color:red"></i>
-</div>
+{{ end }}
 
 
 

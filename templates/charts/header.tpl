@@ -1,3 +1,5 @@
+{{ define "charts/header.tpl" }}
+
 <!doctype html>
 <html>
 
@@ -28,4 +30,6 @@
 
   <body>
     <!--Embed the menu.html template at this location-->
-    {{ template "menu.tpl" . }}
+    {{ template "charts/menu.tpl" . }}
+
+{{ end }}

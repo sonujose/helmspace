@@ -20,7 +20,7 @@ func (h *handler) ShowIndexPage(c *gin.Context) {
 
 	data := gin.H{"title": "Helmspace", "chartData": charts}
 
-	render(c, data, "index.tpl")
+	render(c, data, "charts/index.tpl")
 }
 
 func (h *handler) ShowChartPage(c *gin.Context) {
@@ -42,7 +42,7 @@ func (h *handler) ShowChartPage(c *gin.Context) {
 
 	data := gin.H{"title": "Helmspace", "chartItem": chartItem, "repoDetails": repoItem}
 
-	render(c, data, "chart.tpl")
+	render(c, data, "charts/chart.tpl")
 }
 
 func (h *handler) GetChartDetailReadme(c *gin.Context) {
@@ -65,6 +65,29 @@ func (h *handler) GetChartDetailReadme(c *gin.Context) {
 		"readMe": *readmeData,
 	})
 }
+
+func (h *handler) ShowVisualizePage(c *gin.Context) {
+
+	var chartData models.ChartItem
+
+	err := c.ShouldBindUri(&chartData); 
+
+	if err != nil {
+		c.JSON(400, gin.H{"msg": err})
+		return
+	}
+
+	fmt.Printf("Chart name selected - %s \n", chartData.Name)
+
+	repoItem := controller.GetRepoDetails()
+	
+	chartItem := controller.GetChartMetadata(chartData.Name, repoItem.URL)
+
+	data := gin.H{"title": "Helmspace", "chartItem": chartItem, "repoDetails": repoItem}
+
+	render(c, data, "visualize/index.tpl")
+}
+
 
 func render(c *gin.Context, data gin.H, templateName string) {
 	c.HTML(http.StatusOK, templateName, data)

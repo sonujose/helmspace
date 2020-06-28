@@ -1,5 +1,6 @@
-<!--Embed the header.html template at this location-->
-{{ template "header.tpl" .}}
+{{ define "charts/chart.tpl" }}
+
+{{ template "charts/header.tpl" .}}
 
 <div class="main-page">
 
@@ -27,8 +28,7 @@
 
         <!-- Chart bottons section-->
         <div class="chart-box-right">
-          <button class="btn banner-btn"><i class="fa fa-download"></i> Download</button>
-          <button class="btn banner-btn"><i class="fa fa-file-archive-o"></i> Explore</button>
+          <a class="btn banner-btn" href="/visualize/{{ (index .chartItem 0).Name }}"><i class="fa fa-dashboard"></i> Visualize</a>
         </div>
       </div>
 
@@ -48,15 +48,11 @@
       <input type="radio" name="tabset" id="tab1" aria-controls="readme" checked>
       <label for="tab1"><i class="fa fa-file-text-o tab-icon" ></i> Readme</label>
       
-      <!--Visualize tab-->
-      <input type="radio" name="tabset" id="tab2" aria-controls="visualize">
-      <label for="tab2"><i class="fa fa fa-dashboard tab-icon" ></i>Visualize</label>
-      
       <!--versions tab-->
       <input type="radio" name="tabset" id="tab4" aria-controls="versions">
       <label for="tab4"><i class="fa fa-tags tab-icon" ></i>Versions</label>
 
-      <!--versions tab-->
+      <!--Dependency tab-->
       <input type="radio" name="tabset" id="tab5" aria-controls="dependency">
       <label for="tab5"><i class="fa fa fa-plug tab-icon"></i>Dependencies</label>
       
@@ -64,22 +60,17 @@
 
         <!--readme section-->
         <section id="readme" class="tab-panel">
-          {{ template "readme.tpl" .}}
-        </section>
-
-        <!--visualize section-->
-        <section id="visualize" class="tab-panel">
-          {{ template "visualize.tpl" .}}
+          {{ template "charts/readme.tpl" .}}
         </section>
 
         <!-- versions section -->
         <section id="versions" class="tab-panel">
-          {{ template "versions.tpl" .}}
+          {{ template "charts/versions.tpl" .}}
         </section>
 
         <!--Dependency section-->
         <section id="dependency" class="tab-panel">
-          {{ template "dependency.tpl" .}}
+          {{ template "charts/dependency.tpl" .}}
         </section>
       </div>
       
@@ -98,4 +89,6 @@
 
 </div>
 <!-- Footer section -->
-{{ template "footer.tpl" .}}
+{{ template "charts/footer.tpl" .}}
+
+{{ end }}

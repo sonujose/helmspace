@@ -1,3 +1,4 @@
+{{ define "charts/versions.tpl" }}
 <table class="table table-dark">
 <thead>
     <tr>
@@ -17,3 +18,4 @@
     {{end}}
 </tbody>
 </table>
+{{ end }}

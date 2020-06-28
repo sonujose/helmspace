@@ -1,3 +1,4 @@
+{{ define "charts/menu.tpl" }}
 
 <nav class="navbar navbar-default chart-mirror-bg">
     <div class="container">
@@ -15,3 +16,5 @@
       </div>
     </div>
   </nav>
+
+{{ end }}

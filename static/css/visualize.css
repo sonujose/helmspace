@@ -1,0 +1,43 @@
+.visualize-dash {
+    background: #0f171e;
+    height: 87vh;
+}
+
+.viz-left-panel {
+    height: 87vh;
+    background: #091017;
+    padding: 15px;
+}
+
+.viz-node-panel {
+    background: #0f171e;
+}
+
+.viz-right-panel {
+    height: 85vh;
+    background: #e4e4e4;
+}
+
+.viz-footer-site-info {
+    padding-top: 10px;
+    padding-left: 20px;
+}
+
+.viz-chart-mirror-bg {
+    background: #151c25 !important;
+    border: none;
+    border-radius: 0;
+    margin-bottom: 0;
+}
+
+.viz-footer-bottom {
+    background: #151c25 !important;
+}
+
+footer {
+    width: 100%;
+    bottom: 0;
+    height: 44px;
+    background: #151c25 !important;
+    color: white;
+}
