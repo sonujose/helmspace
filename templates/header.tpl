@@ -3,7 +3,7 @@
 
   <head>
     <!--Use the title variable to set the title of the page-->
-    <title>Helmer</title>
+    <title>Helmspace</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
 

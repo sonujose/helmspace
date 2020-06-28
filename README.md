@@ -1,15 +1,15 @@
-# <img src="./static/img/icons/apple-touch-icon.png" height="25" width="25"> Helmer
+# <img src="./static/img/icons/apple-touch-icon.png" height="25" width="25"> Helmspace
 
 [![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs)
 [![Version](https://badge.fury.io/gh/tterb%2FHyde.svg)](https://badge.fury.io/gh/tterb%2FHyde)
 
-Helmer is a web UI dashboard to visualize and manage charts in your Helm repository. The application is available as docker image so that you can host it in your premise and connect to any public or private Chartmuseum server.
+Helmspace is a web UI dashboard to visualize and manage charts in your Helm repository. The application is available as docker image so that you can host it in your premise and connect to any public or private Chartmuseum server.
 
-<img src="./docs/helmer-dash2.PNG">
+<img src="./docs/helmspace-dash2.PNG">
 
 ## Docker Image Usage
 
-The Docker image available at [bhsonu/helmer](https://hub.docker.com/r/bhsonu/helmer)
+The Docker image available at [bhsonu/helmspace](https://hub.docker.com/r/bhsonu/helmspace)
 
 Chartmusum server url is required to run the application. Refer to [Chartmuseum](https://github.com/helm/chartmuseum) to setup Chartmuseum server
 
@@ -17,7 +17,7 @@ Chartmusum server url is required to run the application. Refer to [Chartmuseum]
 docker run --rm -it \
   -p 5000:5000 \
   -e CHART_MUSEUM_URL=http://localhost:9000
-  bhsonu/helmer:latest
+  bhsonu/helmspace:latest
 ```
 After successfull docker run, the dashboard will be available at `http://localhost:5000`  
 

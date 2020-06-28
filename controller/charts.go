@@ -5,7 +5,7 @@ import (
 	"log"
 	"io/ioutil"
 	"os"
-	"github.com/sonujose/helmer/models"
+	"github.com/sonujose/helmspace/models"
 )
 
 // DEFAULT: API Endpoint for chartmuseum server

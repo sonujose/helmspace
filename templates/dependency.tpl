@@ -1,6 +1,4 @@
+<!-- Button trigger modal -->
 <div>
-    Dependency Charts for the Parent
-    <ul>
-        <li>Postgres</li>
-    </ul>
+Dependency
 </div>

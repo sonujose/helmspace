@@ -1,4 +1,4 @@
-module github.com/sonujose/helmer
+module github.com/sonujose/helmspace
 
 go 1.13
 
