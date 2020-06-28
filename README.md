@@ -5,7 +5,7 @@
 
 Helmspace is a free and Opensource web UI dashboard to visualize and manage charts in your Helm repository. 
 
-**NOTE : The application is still in alpha state, not ready for acual usage**
+**NOTE : The application is still in alpha state, not ready for actual usage**
 
 <img src="./docs/helmspace-dash.PNG">
 
