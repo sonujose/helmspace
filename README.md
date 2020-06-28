@@ -3,11 +3,15 @@
 [![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs)
 [![Version](https://badge.fury.io/gh/tterb%2FHyde.svg)](https://badge.fury.io/gh/tterb%2FHyde)
 
-Helmspace is a web UI dashboard to visualize and manage charts in your Helm repository. The application is available as docker image so that you can host it in your premise and connect to any public or private Chartmuseum server.
+Helmspace is a free and Opensource web UI dashboard to visualize and manage charts in your Helm repository. 
 
-<img src="./docs/helmspace-dash2.PNG">
+**NOTE : The application is still in alpha state, not ready for acual usage**
 
-## Docker Image Usage
+<img src="./docs/helmspace-dash.PNG">
+
+## Application Usage
+
+The application is available as docker image so that you can host it in your premise and connect to any public or private Chartmuseum server.
 
 The Docker image available at [bhsonu/helmspace](https://hub.docker.com/r/bhsonu/helmspace)
 
