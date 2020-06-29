@@ -33,7 +33,7 @@ type ChartItem struct {
 }
 
 // ChartVersion - chart version
-type ChartVersion struct {
+type ChartData struct {
 	Name string `uri:"name" binding:"required"`
 	Version string `uri:"version" binding:"required"`
 }
