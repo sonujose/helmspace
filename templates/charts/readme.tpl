@@ -7,9 +7,15 @@
 
 $(document).ready(function(){
   
-  console.log("Ready - Fetching readme content...");
-  var readmeApiEndpoint = "/api/v1/readme/core-microservice/1.1.0" 
+  console.log("Ready - Fetching chart metedata from ui..");
 
+  chartName = $("#chartName").text()
+  version = $("#chartVersion").text()
+
+  var readmeApiEndpoint = "/api/v1/readme/" + chartName + "/" + version
+
+  console.log("API Call readme" + readmeApiEndpoint)
+  
   $.get(readmeApiEndpoint, function(data, status){
     console.log("readme api call" + readmeApiEndpoint + "->" + status)
     var converter   = new showdown.Converter(),
