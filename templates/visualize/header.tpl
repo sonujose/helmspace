@@ -19,14 +19,13 @@
     <!--Use bootstrap to make the application look nice-->
     <link rel="stylesheet" href="/static/css/visualize.css">
     <link rel="stylesheet" href="/static/css/tiles.css">
+    <link rel="stylesheet" href="/static/css/nodegraph.css">
     
-    <!--Scripts JQuery and bootstrap-->
-    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-    <script async src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-    
-    <!-- Visualize library scripts -->
-    <script src="/static/js/springy.min.js"></script>
-    <script src="/static/js/springyui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.2.7/cytoscape.js"></script>
+    <script src="https://unpkg.com/dagre@0.7.4/dist/dagre.js"></script>
+    <script src="https://cytoscape.org/cytoscape.js-dagre/cytoscape-dagre.js"></script>
+    <script src="/static/js/nodegraph.js"></script>
   </head>
 
   <body>
