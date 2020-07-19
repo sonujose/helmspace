@@ -15,10 +15,10 @@ $(document).ready(function(){
   var readmeApiEndpoint = "/api/v1/readme/" + chartName + "/" + version
 
   console.log("API Call readme" + readmeApiEndpoint)
-  
+
   $.get(readmeApiEndpoint, function(data, status){
     console.log("readme api call" + readmeApiEndpoint + "->" + status)
-    var converter   = new showdown.Converter(),
+    var converter   = new showdown.Converter({extensions: ['table']}),
         htmlReadme  = converter.makeHtml(data.readme);
     $("#readme").html(htmlReadme);
   });
