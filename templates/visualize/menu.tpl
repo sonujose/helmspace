@@ -10,4 +10,5 @@
     </div>
 
   </nav>
+  <div style="width:100%; text-align:center; background:orange; color:white">Preview Only!! Work in Progress</div>
 {{ end }}
