@@ -7,7 +7,13 @@ Helmspace is a free and Opensource web UI dashboard to visualize and manage char
 
 **NOTE : The application is still in alpha state, not ready for actual usage**
 
+## Dasboard 
+
 <img src="./docs/helmspace-dash.PNG">
+
+## Visualize
+
+<img src="./docs/visualize.PNG">
 
 ## Application Usage
 
