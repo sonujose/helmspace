@@ -31,39 +31,36 @@
             name: "dagre"
           },
           style: cytoscape.stylesheet()
-            .selector('node').css({
-              "content": "data(label)",
-              "text-valign": "bottom",
-              "background-color": "#a2a18c",
-              "border-width": 17,
-              "border-color": "#717178",
-              "border-opacity": 0.3,
-              "height": "17px",
-              "width":"17px",
-              "font-size": "12px",
-              "shape": "ellipse",
-              "color": "white"
-            })
-
-            .selector(':selected').css({
+          .selector('node').css({
+            "content": "data(label)",
+            "text-valign": "bottom",
+            "background-color": "#3ea2f8",
+            "border-width": 17,
+            "border-color": "#4a5158",
+            "border-opacity": 0.3,
+            "height": "17px",
+            "width":"17px",
+            "font-size": "12px",
+            "shape": "ellipse",
+            "color": "white",
+            "transition": "width 2s, height 4s"
+          })
+          .selector('node.highlight').css({
               "background-color": "#3ea2f8",
-              "border-color": "#4a5158",
-            })
-
-            .selector('node.highlight').css({
-               "background-color": "#3ea2f8",
-               "border-color": "#4a5158",
-            })
-            .selector('edge.highlight').css({
-              "line-color": "#f00",
-            })
-
-            .selector('edge').css({
-              "width": 1,
-              "line-color": "#eee",
-              "target-arrow-color": "#9dbaea",
-              "curve-style": "bezier"
-            }),
+              "border-color": "#fdfdfd",
+              "height": "20px",
+              "width":"20px",
+              "border-width": 20
+          })
+          .selector('edge.highlight').css({
+            "line-color": "#f00",
+          })
+          .selector('edge').css({
+            "width": 1,
+            "line-color": "#fff",
+            "target-arrow-color": "#9dbaea",
+            "curve-style": "bezier"
+          }),
           elements: {
             nodes: markupNodes,
             edges: markupEdges
@@ -95,15 +92,18 @@
           console.log(cy.zoom());
         });
 
-        cy.on('mouseover', 'node', function mouseover(e){
+      cy.on('mouseover', 'node', function mouseover(e){
           var sel = e.target;
+          sel.addClass('highlight');
           //cy.elements().difference(sel.outgoers()).not(sel).addClass('semitransp');
-          sel.addClass('highlight').outgoers().union(sel.incomers()).addClass('highlight');
+          //sel.addClass('highlight').outgoers().union(sel.incomers()).addClass('highlight');
+          sel.connectedEdges().style({ 'line-color': '#3ea2f8' });
       });
       cy.on('mouseout', 'node', function mouseout(e){
           var sel = e.target;
           //cy.elements().removeClass('semitransp');
           sel.removeClass('highlight').outgoers().union(sel.incomers()).removeClass('highlight');
+          sel.connectedEdges().style({ 'line-color': '#fff' });
       });
 
       });
