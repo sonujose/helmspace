@@ -5,6 +5,7 @@ import (
 	"fmt"
 
 	"github.com/gin-gonic/gin"
+
 	"github.com/sonujose/helmspace/controller"
 	"github.com/sonujose/helmspace/models"
 )
@@ -46,7 +47,7 @@ func (h *handler) ShowChartPage(c *gin.Context) {
 }
 
 func (h *handler) GetChartDetailReadme(c *gin.Context) {
-	var chartData models.ChartVersion
+	var chartData models.ChartData
 
 	err := c.ShouldBindUri(&chartData); 
 
@@ -60,9 +61,9 @@ func (h *handler) GetChartDetailReadme(c *gin.Context) {
 	repoItem := controller.GetRepoDetails()
 	
 	readmeData := controller.FetchChartReadme(repoItem.URL, chartData)
-
+	
 	c.JSON(http.StatusOK, map[string]string{
-		"readMe": *readmeData,
+		"readme": *readmeData,
 	})
 }
 

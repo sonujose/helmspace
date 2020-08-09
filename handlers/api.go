@@ -12,7 +12,7 @@ func RegisterAPIEndpoints(routerEngine *gin.Engine) {
 	// Setup route group for the API
 	api := routerEngine.Group("/api/v1")
 	{
-		api.GET("/chart/:name/:version", apiHandler.GetChartDetailReadme)
+		api.GET("/readme/:name/:version", apiHandler.GetChartDetailReadme)
 	}
 
 }

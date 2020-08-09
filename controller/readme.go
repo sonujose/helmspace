@@ -8,15 +8,15 @@ import(
 )
 
 // FetchChartReadme - Get Chartdate readme content
-func FetchChartReadme(repoURL string, chartVersion models.ChartVersion) *string {
+func FetchChartReadme(repoURL string, chartData models.ChartData) *string {
 
-	log.Printf("Creating tarball url -  %s, %s, %s ", repoURL, chartVersion.Name, chartVersion.Version)
+	log.Printf("Creating tarball url -  %s, %s, %s ", repoURL, chartData.Name, chartData.Version)
 
-	tarballURL := getChartTarballURL(repoURL, chartVersion.Name, chartVersion.Version)
+	tarballURL := getChartTarballURL(repoURL, chartData.Name, chartData.Version)
 	
-	log.Printf("Fetching chart data from %s", tarballURL)
+	log.Printf("Fetching chart data from %s & README from %s/README.md", tarballURL, chartData.Name)
 
-	readmeContent, err := utilities.GetFileBlobFromTarBall(tarballURL, "core-microservice/README.md")
+	readmeContent, err := utilities.GetFileBlobFromTarBall(tarballURL, utilities.CreateKeyString(chartData.Name ,"/README.md"))
 
 	if err != nil {
 		log.Fatalf("Unable to retrieve chart data from %v - Error: %v", tarballURL, err)

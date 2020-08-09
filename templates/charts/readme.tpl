@@ -1,10 +1,29 @@
 {{ define "charts/readme.tpl" }}
-<div>
-Introduction
-This chart bootstraps an Apache Airflow deployment on a Kubernetes cluster using the Helm package manager.
+<div id="readme">
 
-Bitnami charts can be used with Kubeapps for deployment and management of Helm Charts in clusters. 
-This Helm chart has been tested on top of Bitnami Kubernetes Production Runtime (BKPR). 
-Deploy BKPR to get automated TLS certificates, logging and monitoring for your applications.
 </div>
+
+<script>
+
+$(document).ready(function(){
+  
+  console.log("Ready - Fetching chart metedata from ui..");
+
+  chartName = $("#chartName").text()
+  version = $("#chartVersion").text()
+
+  var readmeApiEndpoint = "/api/v1/readme/" + chartName + "/" + version
+
+  console.log("API Call readme" + readmeApiEndpoint)
+
+  $.get(readmeApiEndpoint, function(data, status){
+    console.log("readme api call" + readmeApiEndpoint + "->" + status)
+    var converter   = new showdown.Converter({extensions: ['table']}),
+        htmlReadme  = converter.makeHtml(data.readme);
+    $("#readme").html(htmlReadme);
+  });
+
+});
+
+</script>
 {{ end }}

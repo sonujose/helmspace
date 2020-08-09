@@ -46,7 +46,7 @@ func GetFileBlobFromTarBall(tarURL string, fileName string) (*string, error) {
             return blobData, err
         }
 
-        log.Printf("Validating file - %s", header.Name)
+        //log.Printf("Validating file - %s", header.Name)
 
         if strings.EqualFold(header.Name, fileName) {
             log.Printf("Filename found - %s", fileName)

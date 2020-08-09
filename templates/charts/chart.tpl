@@ -20,8 +20,8 @@
             {{end}}
           </div>
           <div class="chart-metadata">
-            <div class="chart-name">{{ (index .chartItem 0).Name }}</div>
-            <div>Version: {{ (index .chartItem 0).Version }}</div>
+            <div class="chart-name" id="chartName">{{ (index .chartItem 0).Name }}</div>
+            <div id="chartVersion">{{ (index .chartItem 0).Version }}</div>
             <div style="margin-top: 5px">Published on {{ (index .chartItem 0).Created.Format "Jan 02, 2006 15:04:05 UTC" }} </div>
           </div>
         </div>
