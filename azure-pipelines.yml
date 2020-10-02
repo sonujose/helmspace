@@ -10,29 +10,30 @@ resources:
 
 variables:
   tag: '$(Build.BuildId)'
+  semversion: '0.5'
 
 stages:
 - stage: Build
-  displayName: Build image
+  displayName: Build Helmspace image
   jobs:  
   - job: Build
-    displayName: Build
+    displayName: Build Helmspace Image
     pool:
       vmImage: 'ubuntu-latest'
     steps:
     - task: Docker@2
-      displayName: Build helmspace image
+      displayName: Build Helmspace image
       inputs:
         containerRegistry: 'Docker_Hub_bhsonu'
         repository: 'bhsonu/helmspace'
         command: 'build'
         Dockerfile: '**/Dockerfile'
         tags: |
-          $(tag)
+          $(semversion).$(tag)
     - task: Docker@2
       displayName: Push helmspace image to DockerHub
       inputs:
         containerRegistry: 'Docker_Hub_bhsonu'
         repository: 'bhsonu/helmspace'
         command: 'push'
-        tags: '$(tag)'
+        tags: '$(semversion).$(tag)'

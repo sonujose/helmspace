@@ -1,5 +1,5 @@
 # <img src="./static/img/icons/apple-touch-icon.png" height="25" width="25"> Helmspace
-
+[![Build Status](https://dev.azure.com/sonujse/Helmspace/_apis/build/status/helmspace?branchName=master)](https://dev.azure.com/sonujse/Helmspace/_build/latest?definitionId=1&branchName=master)
 [![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs)
 [![Version](https://badge.fury.io/gh/tterb%2FHyde.svg)](https://badge.fury.io/gh/tterb%2FHyde)
 
