@@ -72,6 +72,7 @@ stages:
 
 - stage: Production
   displayName: Production stage
+  dependsOn: [intgeration, deploy]
   jobs:
     - job: production
       steps:
