@@ -58,7 +58,7 @@ stages:
 
 - stage: intgeration
   displayName: Integrationstage
-  dependsOn: [] 
+  dependsOn: [Build] 
   jobs:
     - job: integrations
       steps:
