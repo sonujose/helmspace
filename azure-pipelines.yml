@@ -21,9 +21,18 @@ stages:
       vmImage: 'ubuntu-latest'
     steps:
     - task: Docker@2
-      displayName: Build an image
+      displayName: Build helmspace image
       inputs:
-        command: build
-        dockerfile: '$(Build.SourcesDirectory)/Dockerfile'
+        containerRegistry: 'Docker_Hub_bhsonu'
+        repository: 'bhsonu/helmspace'
+        command: 'build'
+        Dockerfile: '**/Dockerfile'
         tags: |
           $(tag)
+    - task: Docker@2
+      displayName: Push helmspace image to DockerHub
+      inputs:
+        containerRegistry: 'Docker_Hub_bhsonu'
+        repository: 'bhsonu/helmspace'
+        command: 'push'
+        tags: '$(tag)'
