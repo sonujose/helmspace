@@ -37,3 +37,19 @@ stages:
         repository: 'bhsonu/helmspace'
         command: 'push'
         tags: '$(semversion).$(tag)'
+
+- stage: deploy
+  displayName: Deploy application
+  environment: 
+    name: 'dev'
+  strategy:
+    runOnce:
+      deploy:
+        steps:
+        - task: Bash@3
+          displayName: 'Create deployment'
+          inputs:
+            targetType: 'inline'
+            script: |
+              #!/bin/bash
+              echo "Deploying dev"
