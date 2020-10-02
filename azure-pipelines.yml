@@ -41,7 +41,7 @@ stages:
 - stage: deploy
   displayName: Deploy application
   jobs:
-    - deployment: deployment-dev
+    - deployment: deployment1dev
       environment: 
         name: 'dev'
       strategy:
