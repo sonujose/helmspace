@@ -3,17 +3,7 @@
 [![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs)
 [![Version](https://badge.fury.io/gh/tterb%2FHyde.svg)](https://badge.fury.io/gh/tterb%2FHyde)
 
-Helmspace is a free and Opensource web UI dashboard to visualize and manage charts in your Helm repository. 
-
-**NOTE : The application is still in alpha state, not ready for actual usage**
-
-## Helm Dashboard 
-
-<img src="./docs/helmspace-dash.PNG">
-
-## Visualize kubernetes manifest objects
-
-<img src="./docs/visualize.PNG">
+Helmspace is a web UI dashboard to visualize and manage charts in your Helm repository. 
 
 ## Application Usage
 
