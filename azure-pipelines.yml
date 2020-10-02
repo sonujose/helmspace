@@ -18,7 +18,8 @@ stages:
   jobs:  
   - job: Build
     displayName: Build Helmspace Image
-    pool: sonu-civo-pool
+    pool: 
+      vmImage: 'ubuntu-latest'
     steps:
     - task: Docker@2
       displayName: Build Helmspace image
@@ -41,7 +42,6 @@ stages:
   displayName: Deploy application
   jobs:
     - deployment: deployment1dev
-      pool: sonu-civo-pool
       environment: 
         name: 'dev'
       strategy:
@@ -61,7 +61,6 @@ stages:
   dependsOn: [Build] 
   jobs:
     - job: integrations
-      pool: sonu-civo-pool
       steps:
       - task: Bash@3
         displayName: 'Create Integration'
@@ -78,7 +77,6 @@ stages:
     - deploy
   jobs:
     - job: production
-      pool: sonu-civo-pool
       steps:
       - task: Bash@3
         displayName: 'Create Integration'
