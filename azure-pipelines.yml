@@ -55,3 +55,30 @@ stages:
                 script: |
                   #!/bin/bash
                   echo "Deploying dev"
+
+- stage: intgeration
+  displayName: Integrationstage
+  dependsOn: [] 
+  jobs:
+    - job: integrations
+      steps:
+      - task: Bash@3
+        displayName: 'Create Integration'
+        inputs:
+          targetType: 'inline'
+          script: |
+            #!/bin/bash
+            echo "Deploying dev"
+
+- stage: Production
+  displayName: Production stage
+  jobs:
+    - job: production
+      steps:
+      - task: Bash@3
+        displayName: 'Create Integration'
+        inputs:
+          targetType: 'inline'
+          script: |
+            #!/bin/bash
+            echo "Deploying dev"
