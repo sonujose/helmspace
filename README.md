@@ -26,8 +26,6 @@ After successfull docker run, the dashboard will be available at `http://localho
 The application is fully written in go language using the gin-gonic web framework.
 
 * [gin-gonic](https://gin-gonic.com/) - The web framework for GO
-* [go](https://golang.org/) - Programing language
-* [go-modules](https://github.com/golang/go/wiki/Modules) - Go Package management
 
 You need go 1.11+ installed in the machine for building the application without Docker. 
 
