@@ -5,6 +5,8 @@
 
 Helmspace is a web UI dashboard to visualize and manage charts in your Helm repository. 
 
+![Helmspace dashboard](./docs/dashboard-v1.PNG)
+
 ## Application Usage
 
 The application is available as docker image so that you can host it in your premise and connect to any public or private Chartmuseum server.
