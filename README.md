@@ -18,7 +18,7 @@ Chartmusum server url is required to run the application. Refer to [Chartmuseum]
 ```
 docker run --rm -it \
   -p 5000:5000 \
-  -e CHART_MUSEUM_URL=http://localhost:9000
+  -e CHART_MUSEUM_URL=http://localhost:9000 \
   bhsonu/helmspace:latest
 ```
 After successfull docker run, the dashboard will be available at `http://localhost:5000`  
